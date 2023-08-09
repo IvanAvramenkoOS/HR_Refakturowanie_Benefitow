@@ -1,0 +1,15 @@
+﻿{
+  "Id": "749marxNOkG9DVi5ni9yrg",
+  "Reference": "8mqe2vJVnkipbF0g__22OQ/749marxNOkG9DVi5ni9yrg",
+  "ParentRef": "8mqe2vJVnkipbF0g__22OQ/lcWRGnVw_UKIvGBmPnVnAg",
+  "Name": "Gotowa Faktura",
+  "Type": "Screen",
+  "Created": "2023-08-02T15:15:59.8917061Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=23.6.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2023-08-02T15:16:04.2440885Z",
+  "UpdatedBy": [
+    "UiPath.Platform, Version=23.6.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

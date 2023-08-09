@@ -1,0 +1,15 @@
+﻿{
+  "Id": "zKnKPefBXU2q6S7J7Uk4CQ",
+  "Reference": "8mqe2vJVnkipbF0g__22OQ/zKnKPefBXU2q6S7J7Uk4CQ",
+  "ParentRef": "8mqe2vJVnkipbF0g__22OQ/lcWRGnVw_UKIvGBmPnVnAg",
+  "Name": "Nowa faktura",
+  "Type": "Screen",
+  "Created": "2023-07-13T13:36:34.0237259Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=23.6.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2023-07-13T13:36:50.509309Z",
+  "UpdatedBy": [
+    "UiPath.Platform, Version=23.6.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

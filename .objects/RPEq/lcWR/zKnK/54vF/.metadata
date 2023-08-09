@@ -1,0 +1,16 @@
+﻿{
+  "Id": "54vF2g5lrUCFHNL-BzsLPQ",
+  "Reference": "8mqe2vJVnkipbF0g__22OQ/54vF2g5lrUCFHNL-BzsLPQ",
+  "ParentRef": "8mqe2vJVnkipbF0g__22OQ/zKnKPefBXU2q6S7J7Uk4CQ",
+  "Name": "Dodaj Produkt",
+  "Type": "Element",
+  "TaxonomyType": "Element",
+  "Created": "2023-07-30T11:40:48.0524114Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=23.6.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2023-07-30T11:41:07.674939Z",
+  "UpdatedBy": [
+    "UiPath.Platform, Version=23.6.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

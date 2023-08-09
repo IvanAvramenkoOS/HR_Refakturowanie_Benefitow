@@ -1,0 +1,14 @@
+﻿{
+  "Id": "RPEqAepGMEq01EzaAoDWIw",
+  "Reference": "8mqe2vJVnkipbF0g__22OQ/RPEqAepGMEq01EzaAoDWIw",
+  "Name": "Comarch",
+  "Type": "App",
+  "Created": "2023-07-12T14:28:14.0657501Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=23.6.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2023-07-13T13:36:33.9743733Z",
+  "UpdatedBy": [
+    "UiPath.Platform, Version=23.6.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,13 @@
+﻿{
+  "Id": "PaXAZjYaq06wlI8G1p8xFQ",
+  "Reference": "8mqe2vJVnkipbF0g__22OQ/PaXAZjYaq06wlI8G1p8xFQ",
+  "ParentRef": "8mqe2vJVnkipbF0g__22OQ/jplJKzSfyU6AkDXTLXQDuA",
+  "Name": "Faktury",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Created": "2023-07-13T13:11:33.8346834Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=23.6.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2023-07-13T13:11:33.8346834Z"
+}

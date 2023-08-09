@@ -1,0 +1,13 @@
+﻿{
+  "Id": "Wu2_0AOhPUK35c35P83KRA",
+  "Reference": "8mqe2vJVnkipbF0g__22OQ/Wu2_0AOhPUK35c35P83KRA",
+  "ParentRef": "8mqe2vJVnkipbF0g__22OQ/g7KRluw9PU-rQQkbNi8G6w",
+  "Name": "Znaleziony kontrahent",
+  "Type": "Element",
+  "TaxonomyType": "None",
+  "Created": "2023-07-13T13:57:49.3121148Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=23.6.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2023-07-13T13:57:49.3121148Z"
+}

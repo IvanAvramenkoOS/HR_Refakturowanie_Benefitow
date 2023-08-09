@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="fYQBvZaY1keSSkBEZeGiew" Reference="8mqe2vJVnkipbF0g__22OQ/TZMfsTt1HEWG4tzpw2APyA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" ContentHash="z6AJxy0_90yWSTKDkln5PQ" CvTextArgument="Haslo" CvType="CheckBox" DesignTimeRectangle="1008, 732, 117, 40" DesignTimeScaleFactor="1" ElementType="CheckBox" FriendlyName="'Zaloguj'" FullSelectorArgument="&lt;webctrl aaname='Zaloguj' tag='BUTTON' visibleinnertext='Zaloguj' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Zaloguj' tag='BUTTON' visibleinnertext='Zaloguj' type='' class='cds-button-primary ml2 ng-tns-c62-2' check:text='Zaloguj' /&gt;" Guid="74b0d6dd-1587-4330-aed7-fd76f5f9f602" ImageBase64="" Reference="8mqe2vJVnkipbF0g__22OQ/TZMfsTt1HEWG4tzpw2APyA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SSO' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="4e1168306c48659483f5baf770778c77.png" xmlns="">09JHpWKxK-EKoi9QFWlpI_A</imageRef>
+    </TargetAnchorable>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

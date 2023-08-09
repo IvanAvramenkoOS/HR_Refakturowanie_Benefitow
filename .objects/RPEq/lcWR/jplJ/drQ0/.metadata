@@ -1,0 +1,13 @@
+﻿{
+  "Id": "drQ0AlBcO0m29DAp5I_S6g",
+  "Reference": "8mqe2vJVnkipbF0g__22OQ/drQ0AlBcO0m29DAp5I_S6g",
+  "ParentRef": "8mqe2vJVnkipbF0g__22OQ/jplJKzSfyU6AkDXTLXQDuA",
+  "Name": "Faktury sprzedaży",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Created": "2023-07-13T13:11:33.8807777Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=23.6.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2023-07-13T13:11:33.8807777Z"
+}

@@ -1,0 +1,80 @@
+{
+  "name": "HR_Refakturowanie_B2B",
+  "description": "HR_Refakturowanie_B2B process\r\nfor Office Samurai HR\r\nby Office Samurai\r\nsupport@office-samurai.com\r\n---------------\r\nSolution Architect: Ivan Avramenko",
+  "main": "Main.xaml",
+  "dependencies": {
+    "Office.Samurai.UiPath.Activities": "[23.4.0]",
+    "OfficeSamurai.Standard.Activities": "[2.1.0]",
+    "UiPath.Excel.Activities": "[2.20.2]",
+    "UiPath.Mail.Activities": "[1.20.3]",
+    "UiPath.MicrosoftOffice365.Activities": "[2.2.7]",
+    "UiPath.System.Activities": "[23.4.3]",
+    "UiPath.Testing.Activities": "[23.4.1]",
+    "UiPath.UIAutomation.Activities": "[23.4.8]"
+  },
+  "webServices": [],
+  "entitiesStores": [],
+  "schemaVersion": "4.0",
+  "studioVersion": "23.4.1.0",
+  "projectVersion": "23.8.9",
+  "runtimeOptions": {
+    "autoDispose": false,
+    "netFrameworkLazyLoading": false,
+    "isPausable": true,
+    "isAttended": false,
+    "requiresUserInteraction": true,
+    "supportsPersistence": false,
+    "workflowSerialization": "DataContract",
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ],
+    "executionType": "Workflow",
+    "readyForPiP": false,
+    "startsInPiP": false,
+    "mustRestoreAllDependencies": true,
+    "pipType": "ChildSession"
+  },
+  "designOptions": {
+    "projectProfile": "Developement",
+    "outputType": "Process",
+    "libraryOptions": {
+      "includeOriginalXaml": false,
+      "privateWorkflows": []
+    },
+    "processOptions": {
+      "ignoredFiles": [
+        "Tests/_Test_LogIn.xaml",
+        "Tests/Sandbox.xaml",
+        "Tests/Tests.xlsx",
+        "Tests/_Test_DodajProdukt.xaml",
+        "o365/O365_Authorize_Choose_account.xaml",
+        "o365/O365_Init_authorize.xaml",
+        "Tests/_test_Send_Email.xaml"
+      ]
+    },
+    "fileInfoCollection": [
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "a6fbeb33-b400-4465-bf84-6c8612937e94",
+        "testCaseType": "TestCase",
+        "executionTemplateType": "Local",
+        "fileName": "Tests\\WorkflowTestCaseTemplate.xaml"
+      }
+    ],
+    "modernBehavior": true
+  },
+  "expressionLanguage": "VisualBasic",
+  "entryPoints": [
+    {
+      "filePath": "Main.xaml",
+      "uniqueId": "32132184-7d1d-4f85-871e-48342eef3bc5",
+      "input": [],
+      "output": []
+    }
+  ],
+  "isTemplate": false,
+  "templateProjectData": {},
+  "publishData": {},
+  "targetFramework": "Windows"
+}

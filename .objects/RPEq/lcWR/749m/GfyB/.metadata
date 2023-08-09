@@ -1,0 +1,16 @@
+﻿{
+  "Id": "GfyBaQKH0U6EqSZ9hqQ2Tg",
+  "Reference": "8mqe2vJVnkipbF0g__22OQ/GfyBaQKH0U6EqSZ9hqQ2Tg",
+  "ParentRef": "8mqe2vJVnkipbF0g__22OQ/749marxNOkG9DVi5ni9yrg",
+  "Name": "Drukuj Fakturę",
+  "Type": "Element",
+  "TaxonomyType": "Element",
+  "Created": "2023-08-02T15:16:17.604182Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=23.6.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2023-08-02T15:17:05.7288777Z",
+  "UpdatedBy": [
+    "UiPath.Platform, Version=23.6.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

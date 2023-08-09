@@ -1,0 +1,16 @@
+﻿{
+  "Id": "TZMfsTt1HEWG4tzpw2APyA",
+  "Reference": "8mqe2vJVnkipbF0g__22OQ/TZMfsTt1HEWG4tzpw2APyA",
+  "ParentRef": "8mqe2vJVnkipbF0g__22OQ/thw9cmsryUK93oKNIESwuw",
+  "Name": "Zapamiętaj mnie",
+  "Type": "Element",
+  "TaxonomyType": "Checkbox",
+  "Created": "2023-07-12T14:35:02.5288467Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=23.6.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2023-07-12T15:13:38.3774036Z",
+  "UpdatedBy": [
+    "UiPath.Platform, Version=23.6.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,13 @@
+﻿{
+  "Id": "zmL4TGVHMku1MDWfZjGYNg",
+  "Reference": "8mqe2vJVnkipbF0g__22OQ/zmL4TGVHMku1MDWfZjGYNg",
+  "ParentRef": "8mqe2vJVnkipbF0g__22OQ/thw9cmsryUK93oKNIESwuw",
+  "Name": "Zaloguj",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Created": "2023-07-12T15:15:33.5518582Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=23.6.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2023-07-12T15:15:33.5518582Z"
+}

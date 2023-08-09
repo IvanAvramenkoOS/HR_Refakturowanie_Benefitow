@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryScreenData ContentHash="s0ZLBUp_XUmJMzkg4119nQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryScreenData.Data>
+    <TargetApp x:Key="TargetApp" Area="0, 0, 0, 0" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHpSURBVFhH7ZbPK4NxHMed/dj8mlL+AmVclIubHOS2445uk6WdiGLMj4MoiYMDtRaililGciA/Mlmxkvx28esiiXjm+dhnfbfn+X6f4Xm+z4bDXvW6TM/n/drFngz4Y9IB/y/gQxTBt3wKrqEt8K+dk08BOtZEyHQKXBb2CtC0EIaXd5Fck1AEtPdvgKl0JG7/8A75C0DnyhtktT5xa/e+kksSVIAY+fYlFWNUgCJi8RmyHXdcFrXckysSVIAgfCjGY8ojnL5HyLFdatbQeEUuSKgOQKkI7wMYGo40Wdx8QZ6W0BSAyiO6Zm/AaN1Xrdl1S56U0ByAUhFT12C0bP6oyboLtW6BPCXBFYDKI7rdZ5Bbv/qleRGrBh6gbpo8IIM7AKUiJo4hr8aX0PLWk+h40gNQeYRrPAT51TOUZY5QfDwlASgVMRaEgsrJqGZ7kBpPWQAqj+gZCYDZFlCMpzQAfztiuA+UwzFZkhKA4/hvHPluHGXRHaBlHGXRFaB1HGXhDuAZR1m4AnjHURbNAXrGURZNAXrHURbVAckYR8mJOFQADiR6JUvWuGUueoKCCkDa+taZ8e34uOcw8WG1ju5Fz1AoAvC1fN5/At2DW7Akey33hBIfVSN+cxx/C5NjMhQBv0064I8DAD4BfHCtdjtG2DgAAAAASUVORK5CYII=" Selector="&lt;html app='chrome.exe' title='Rejestracja - Comarch ERP XT – Nowoczesny program do zarządzania mała firmą' /&gt;" Title="Rejestracja - Comarch ERP XT – Nowoczesny program do zarządzania mała firmą" Url="https://www.erpxt.pl/rejestracja/">
+      <imageRef attrName="InformativeScreenshot" originalValue="119214cc71f93fa3a305a6922627f569.jpg" xmlns="">0MUUMA-M8vkyfuacv_oUXIA</imageRef>
+    </TargetApp>
+  </ObjectRepositoryScreenData.Data>
+</ObjectRepositoryScreenData>

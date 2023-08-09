@@ -1,0 +1,16 @@
+﻿{
+  "Id": "YpaKpbYNakibvUgb928gCg",
+  "Reference": "8mqe2vJVnkipbF0g__22OQ/YpaKpbYNakibvUgb928gCg",
+  "ParentRef": "8mqe2vJVnkipbF0g__22OQ/jplJKzSfyU6AkDXTLXQDuA",
+  "Name": "DodajDokumentSprzedażowy",
+  "Type": "Element",
+  "TaxonomyType": "Element",
+  "Created": "2023-08-09T13:23:52.5326526Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=23.6.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2023-08-09T13:24:13.0111187Z",
+  "UpdatedBy": [
+    "UiPath.Platform, Version=23.6.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

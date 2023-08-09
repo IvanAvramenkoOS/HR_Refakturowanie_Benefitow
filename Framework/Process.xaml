@@ -1,0 +1,492 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Process" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property sap2010:Annotation.AnnotationText="Transaction item to be processed." Name="TransactionItem" Type="InArgument(ui:QueueItem)" />
+    <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="Config" Type="InArgument(scg:Dictionary(x:String, x:String))" />
+    <x:Property Name="dtInputVAT" Type="InArgument(sd:DataTable)" />
+    <x:Property Name="wndCormach" Type="InArgument(ui:Window)" />
+    <x:Property Name="strNIP" Type="OutArgument(x:String)" />
+    <x:Property Name="strNazwaKontrahenta" Type="OutArgument(x:String)" />
+    <x:Property Name="dtInputNIP" Type="InArgument(sd:DataTable)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>806,4391</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="100">
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Windows.Forms</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Mail.Enums</x:String>
+      <x:String>UiPath.Shared.Activities.Utils</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Mail</x:String>
+      <x:String>UiPath.Shared.Activities.ConnectionService.Contracts</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>UiPath.Mail.Outlook.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>System.Globalization</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="80">
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>OS.Standard.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Robot wchodzi na Comarch, wybiera kontrahenta, dodaje produkty, koszt, VAT na nowa fakturę, sprawdza wpisane dane, ściaga fakturę i wysyła do kontrahenta" DisplayName="Process" sap:VirtualizedContainerService.HintSize="816,4086" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="strMultisport" />
+      <Variable x:TypeArguments="x:String" Name="strLuxmed" />
+      <Variable x:TypeArguments="x:String" Name="strJęzyk" />
+      <Variable x:TypeArguments="x:String" Name="strVat" />
+      <Variable x:TypeArguments="x:String" Name="strEMail" />
+      <Variable x:TypeArguments="x:String" Name="strPathSciagnietaFaktura" />
+      <Variable x:TypeArguments="x:Int32" Name="intVAT23Counter" />
+      <Variable x:TypeArguments="x:Int32" Name="intVAT8Counter" />
+      <Variable x:TypeArguments="x:Int32" Name="intVATZwCounter" />
+      <Variable x:TypeArguments="x:String" Name="strImięKontrahenta" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="754,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process&quot;]" />
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="754,380" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+      <ui:MultipleAssign.AssignOperations>
+        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[strNIP]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[TransactionItem.SpecificContent("NIP").ToString.trim]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[strNazwaKontrahenta]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[TransactionItem.SpecificContent("Nazwa kontrahenta").ToString.trim]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[strMultisport]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[TransactionItem.SpecificContent("Refaktura kosztów Multisport").ToString.trim]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[strLuxmed]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[TransactionItem.SpecificContent("Refaktura kosztów Luxmed").ToString.trim]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[strJęzyk]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[TransactionItem.SpecificContent("Refaktura kosztów kursu językowego").ToString.trim]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[strEMail]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[TransactionItem.SpecificContent("Email").ToString.trim]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_10">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[strImięKontrahenta]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[TransactionItem.SpecificContent("Imię kontrahenta").ToString]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Int32">[intVAT23Counter]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Int32">0</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Int32">[intVAT8Counter]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Int32">0</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:Int32">[intVATZwCounter]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:Int32">0</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+        </scg:List>
+      </ui:MultipleAssign.AssignOperations>
+    </ui:MultipleAssign>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="754,141" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Porcessing NIP &quot; + strNIP + &quot; &quot; +strNazwaKontrahenta]" />
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="General\Comarch_WybierzKontrahenta.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="754,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" LogEntry="OnlyInvocation" LogExit="OnlySuccessfulReturn" UnSafe="False" WorkflowFileName="General\Comarch_WybierzKontrahenta.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InOutArgument x:TypeArguments="ui:Window" x:Key="wndComarch">[wndCormach]</InOutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="strNIP">[strNIP]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtInputVAT]" DisplayName="For Each Row in Data Table - po benefitach" sap:VirtualizedContainerService.HintSize="754,1728" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+      <ui:ForEachRow.Body>
+        <ActivityAction x:TypeArguments="sd:DataRow">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="634,1612" sap2010:WorkflowViewState.IdRef="Sequence_23">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <If Condition="[not String.IsNullOrEmpty(TransactionItem.SpecificContent(CurrentRow(0).ToString).ToString)]" DisplayName="If pracownik ma benefit" sap:VirtualizedContainerService.HintSize="572,1501" sap2010:WorkflowViewState.IdRef="If_5">
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="538,1319" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:String" Name="strKoszt" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign DisplayName="Assign VAT per benefit" sap:VirtualizedContainerService.HintSize="496,82" sap2010:WorkflowViewState.IdRef="Assign_14">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[strVat]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[dtInputVAT.AsEnumerable.Where(function(x) x("Benefit").ToString = CurrentRow(0).ToString).CopyToDataTable.Rows(0).item("VAT").ToString]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Switch x:TypeArguments="x:String" DisplayName="Switch - Wysokość VATu - Do walidacji wpisanych wartości" Expression="[strVat]" sap:VirtualizedContainerService.HintSize="496,182" sap2010:WorkflowViewState.IdRef="Switch`1_2">
+                    <Assign x:Key="23" DisplayName="Licznik VAT23++" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_8">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:Int32">[intVAT23Counter]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:Int32">[intVAT23Counter+1]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign x:Key="8" DisplayName="Licznik VAT8++" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_9">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:Int32">[intVAT8Counter]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:Int32">[intVAT8Counter+1]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign x:Key="zw" DisplayName="Licznik VATZw++" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_10">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:Int32">[intVATZwCounter]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:Int32">[intVATZwCounter+1]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                  </Switch>
+                  <Switch x:TypeArguments="x:String" DisplayName="Switch - przypisz koszt benefitu" Expression="[CurrentRow(0).ToString]" sap:VirtualizedContainerService.HintSize="496,182" sap2010:WorkflowViewState.IdRef="Switch`1_3">
+                    <Assign x:Key="Refaktura kosztów kursu językowego" DisplayName="Zapisz koszt kursu" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_11">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[strKoszt]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[TransactionItem.SpecificContent("Język_Koszt").ToString]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign x:Key="Refaktura kosztów Multisport" DisplayName="Zapisz koszt Multisport" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_12">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[strKoszt]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[TransactionItem.SpecificContent("Multisport_Koszt").ToString]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign x:Key="Refaktura kosztów Luxmed" DisplayName="Zapisz koszt Luxmed" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_13">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[strKoszt]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[TransactionItem.SpecificContent("Luxmed_Koszt").ToString]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                  </Switch>
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="General\Comarch_DodajProdukt.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="496,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" LogEntry="OnlyInvocation" LogExit="OnlySuccessfulReturn" UnSafe="False" WorkflowFileName="General\Comarch_DodajProdukt.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InArgument x:TypeArguments="x:String" x:Key="strProdukt">[CurrentRow(0).ToString]</InArgument>
+                      <InOutArgument x:TypeArguments="ui:Window" x:Key="wndComarch">[wndCormach]</InOutArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="strKoszt">[strKoszt]</InArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="pod kątem nazw" DisplayName="General\Comarch_WalidacjaWartości.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="496,144" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" LogEntry="OnlyInvocation" LogExit="OnlySuccessfulReturn" UnSafe="False" WorkflowFileName="General\Comarch_WalidacjaWartości.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InOutArgument x:TypeArguments="x:Int32" x:Key="intVAT23Counter">[intVAT23Counter]</InOutArgument>
+                      <InOutArgument x:TypeArguments="x:Int32" x:Key="intVAT8Counter">[intVAT8Counter]</InOutArgument>
+                      <InOutArgument x:TypeArguments="x:Int32" x:Key="intVATZwCounter">[intVATZwCounter]</InOutArgument>
+                      <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="Config">[Config]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="strVAT">[Nothing]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="strTypWalidacji">Nazwa</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="strKoszt">[Nothing]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="strNazwa">[CurrentRow(0).ToString]</InArgument>
+                      <InOutArgument x:TypeArguments="ui:Window" x:Key="wndComarch">[wndCormach]</InOutArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:InvokeWorkflowFile>
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="pod kątem kosztu" DisplayName="General\Comarch_WalidacjaWartości.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="496,144" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" LogEntry="OnlyInvocation" LogExit="OnlySuccessfulReturn" UnSafe="False" WorkflowFileName="General\Comarch_WalidacjaWartości.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InOutArgument x:TypeArguments="x:Int32" x:Key="intVAT23Counter">[intVAT23Counter]</InOutArgument>
+                      <InOutArgument x:TypeArguments="x:Int32" x:Key="intVAT8Counter">[intVAT8Counter]</InOutArgument>
+                      <InOutArgument x:TypeArguments="x:Int32" x:Key="intVATZwCounter">[intVATZwCounter]</InOutArgument>
+                      <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="Config">[Config]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="strVAT">[Nothing]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="strTypWalidacji">Koszt</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="strKoszt">[strKoszt]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="strNazwa">[Nothing]</InArgument>
+                      <InOutArgument x:TypeArguments="ui:Window" x:Key="wndComarch">[wndCormach]</InOutArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:InvokeWorkflowFile>
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="pod katem VATu" DisplayName="General\Comarch_WalidacjaWartości.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="496,144" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" LogEntry="OnlyInvocation" LogExit="OnlySuccessfulReturn" UnSafe="False" WorkflowFileName="General\Comarch_WalidacjaWartości.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InOutArgument x:TypeArguments="x:Int32" x:Key="intVAT23Counter">[intVAT23Counter]</InOutArgument>
+                      <InOutArgument x:TypeArguments="x:Int32" x:Key="intVAT8Counter">[intVAT8Counter]</InOutArgument>
+                      <InOutArgument x:TypeArguments="x:Int32" x:Key="intVATZwCounter">[intVATZwCounter]</InOutArgument>
+                      <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="Config">[Config]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="strVAT">[strVat+"%"]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="strTypWalidacji">VAT</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="strKoszt">[Nothing]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="strNazwa">[Nothing]</InArgument>
+                      <InOutArgument x:TypeArguments="ui:Window" x:Key="wndComarch">[wndCormach]</InOutArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:InvokeWorkflowFile>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_25" />
+              </If.Else>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEachRow.Body>
+    </ui:ForEachRow>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="754,409" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InUiElement="[wndCormach]" OpenMode="Never" ScopeGuid="641bb6b5-a561-4e46-82d6-f6e7a560440c" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,272" sap2010:WorkflowViewState.IdRef="Sequence_26">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Zapisz'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://app.erpxt.pl/#/invoice/new/289162443.51759857" ContentHash="vUTLUzjAm02I05sljahziQ" CvElementArea="1720, 182, 118, 41" CvTextArea="1736, 195, 45, 17" CvTextArgument="Zapisz" CvType="InputBox" DesignTimeRectangle="1723, 185, 72, 35" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Zapisz'" FullSelectorArgument="&lt;webctrl id='btn-save' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='btn-save' tag='BUTTON' type='' class='drop-left ng-binding' aaname='Zapisz' check:innerText='Zapisz' /&gt;" Guid="f985a7a9-6c9d-4701-84ed-99b8747d2ac8" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEwAAAAnCAYAAAClpK6yAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMpSURBVGhD7Zq/a9tAFMez9e/wn9C5W0aPHbNmDHTJ6LVjx4ymFIpHTSFQChpKS0KCm5YUVEKMS9IU5Zcix44sWY797XsnnSMplx/nKODAPfjAWXc65z5573QYzV32IxgeTk7Y+98dvFo7wouPh5j78NegQsp6s+GpBxjyyMxSdhpuwsK4DJWdhpuwMLNnacDClB2GHByibYQ9DCNMEyNMEyNMEyNMEyNMEyNMk2cnrLIzgD8YwtpS9z81pQpbdkdiQlU4e+p7dJlvDWm2MbZ/qfufGg7RLkPYfLOHRivIEMIZ8FdQRtjqe54bpQorUhXZALRbp+m1Y9T2Y7hCYhJhL8K7icxLOHStvd/FWm+cDBiP0T68wEs5714sLsuMrWwEcKJ0LMfVCNu7/BNVMlcxfPdxv8hwiHbpwuw+2jx7N0A1c73ajuG4Ad5ueqjtxvB5TOcSFdEvFzmGe9ynDO1jPUhkOHsnyRw5YR6sgD6Mh1jb8bHwvQfLjWH94L4jVL96WBCco+7zPCPYTTeZZ0o4RLtcYaeweslCGneWootGl8YNIiyLz6mwfohFOeZzMBEvpOaE+bAj+sDf8+V2EZWfA4Q0jLMr+cdMD4dolyls8eCKV0GLkqUocbHU4pLMlBBHURhl3PU9HdhcwnJMoSSrTpqlFGEQo9E8yUuxMvdbmetTwiHapQn7FsLlP54WnS1FZj5dbNgJULOTHyvrHbrwCGGCVR91KkVRdRTu/nna56ZP7seXooRDtMsRRovjErmKUVeU4uSPn5yhCjLuKkm5z6mESVa72ObnTCq80oxE9pVRihIO0S5D2PK/5Bzm+2HheBFghUplQZQq9Z/0sLR5ActPz21FYRT+WXbTp/LeVW36Piwvht26wBJt7vIhEp51r0txGGNlXW7+Hl5/mqFNX5TXLSEe57SIyXGBwj8jcX8oJQrCQpKVO1YcZDIkJ8xD3RshlFPSWL/TR22V+raS7CrG7B4rpkK1h80WRpgmRpgmMyZs9jHCNDHCNDHCNDHCpoWFmXcrNGBh5u0dDViYeT9MAxbGmDcQH4gUJjPNvON6D1lhhvuI8B/qi2aM2HyC2gAAAABJRU5ErkJggg==" InformativeScreenshot="c64812a209291f4783051d461d85891d.png" Reference="8mqe2vJVnkipbF0g__22OQ/d4eYZI-vMkuu5Z_u6lEbPg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Comarch ERP XT' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvType="ArrowButton" DesignTimeRectangle="1795, 189, 41, 26" ElementType="Button" FriendlyName="'BUTTON btn-openSaveMenu'" FullSelectorArgument="&lt;webctrl id='btn-openSaveMenu' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='btn-openSaveMenu' tag='BUTTON' type='' class='drop-right contextpopupaddbutton' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAC0AAAAeCAYAAAC49JeZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE1SURBVFhH7dhBa8IwGMZxd9qXkbHbtOLHHOymOA9jtqIFv8UYzLHNs21trDsO8fb4vnYd6cygaJpZTOF/KA3ll5Dm0FqtG6AqtSYCX+sNKoW+vA/zaL7kAaeaRZvKok1l0aayaFOdObozx5WXpnz+3QV1PUxTPS+SNnTdneP2KUB3usDNOFSOYbDjh+i/xrh7jmiC+2OKpA9NK9x5WSAUCR7e4j14Bh5+LCGSFXrT+P/RXNOP4BIqWubhMjgmsPsudve8pX6/o0h6P0RCOAT3JLgzDtD2gx/wgMBNmgxPRPmOAulFU9mqeoRj+Ggm4FMy+NAVztKO5uTtkKw+d3v4kVadt8+xYK4UNJfB+aTgj67xx4lySKWhOYYfeyarKhVdVhZtKos2lUWbKoeuSpVDp//yNtgCDLmzK6Av8pYAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 0, 0" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <uix:NCheckState DisplayName="Check App State - Okno Gotowa Faktura - Opcje" sap:VirtualizedContainerService.HintSize="754,781" sap2010:WorkflowViewState.IdRef="NCheckState_1" Version="V3">
+      <uix:NCheckState.IfExists>
+        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,564" sap2010:WorkflowViewState.IdRef="Sequence_27">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="General\Comarch_ŚciagnijFakturę.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" LogEntry="OnlyInvocation" LogExit="OnlySuccessfulReturn" UnSafe="False" WorkflowFileName="General\Comarch_ŚciagnijFakturę.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InOutArgument x:TypeArguments="ui:Window" x:Key="wndComarch">[wndCormach]</InOutArgument>
+              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="Config">[Config]</InArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="strFakturaSaved">[strPathSciagnietaFaktura]</OutArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="o365\O365_SendEmail.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" LogEntry="OnlyInvocation" LogExit="OnlySuccessfulReturn" UnSafe="False" WorkflowFileName="o365\O365_SendEmail.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="Config">
+                <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:String)" ExpressionText="Config" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="strBody">
+                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;Email_Body&quot;).ToString.Replace(&quot;&lt;recipient&gt;&quot;,strImięKontrahenta)" />
+              </InArgument>
+              <InArgument x:TypeArguments="scg:List(x:String)" x:Key="lstAttachments">
+                <VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="new List(of String) from {strPathSciagnietaFaktura}" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="strEmailRecipients">
+                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strEMail" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="strSubject">
+                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;Email_Subject&quot;).ToString.Replace(&quot;&lt;month&gt;&quot;, Datetime.now.toString(&quot;MMMM&quot;,new Globalization.CultureInfo(&quot;pl-PL&quot;)).ToUpper + &quot;-&quot;+Today.ToString(&quot;yyyy&quot;)).Replace(&quot;&lt;recipient&gt;&quot;, strImięKontrahenta)" />
+              </InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+          <ui:LogMessage DisplayName="Log Message - Success" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Faktura została wysłana do kontrahenta&quot;]" />
+        </Sequence>
+      </uix:NCheckState.IfExists>
+      <uix:NCheckState.Target>
+        <uix:TargetAnchorable BrowserURL="https://app.erpxt.pl/#/invoice/new/750047083.5728028" ContentHash="C42z-LXm9E24vp6nS6-kAQ" DesignTimeRectangle="719, 810, 303, 18" DesignTimeScaleFactor="1" FriendlyName="'Drukuj Fakturę'" FullSelectorArgument="&lt;webctrl parentid='angularView' tag='P' aaname='Drukuj fakturę' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='angularView' tag='P' aaname='Drukuj fakturę' type='' class='' check:text='Drukuj fakturę' /&gt;" Guid="15538534-1ea5-454e-94eb-0daacb35d3c4" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAATMAAAAWCAYAAACsTntvAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARJSURBVHhe7Zu/a9taFMf1X8ijwIshg9/mbKnJYIcONnSwwcNL6NCkQ00zPHAXx1MSMpR2aEiHYjSU4KEmHWraIQQPJXgJeIhBQzGBQGoIxoVQ2uX7zlUkR1GuI7uu60Y6wwese++5ki/ow7k/pHz/8RMMwzB3HZYZwzC+gGXGMIwvYJkxDOMLWGYMw/iCuy2zegnKAx1tWd0wnDZRa3bkdUT3WMfiTAiKokBb/YiupM0VJyg/ULBWl9UxDDNpJiqzg6JiiqBPeBaLRR2Hp/L2IzOmzNpvs1Af7+FMUncppxDyH75J6mR4yKz3EflxxMswzK1MXGYp/eSq7NzAwesVxNQsysb1tr/EuJnZrdSxpqRR/iKrk+Ehs8YmoiwzhpkYf1ZmFq03aSiJHbTMayEBkoZhYPdJHCplcJm3IkYmE1eZS2ZdEkZybgVVU5Te8W2dnqNYd9RbHFeQz8WhKSFE5uK4N/8Ch6K818D2ozRi4ctMU0s8te4lcMvMQPVxHMmtBs72N5Ga06CoEerrqj/Z/a+XDRobqjtvory6QM9Iz0L9ZtbrAzJMhgkGU5HZ9697WFay2D0R1+KF/QfJ+0vYqDvXr0aUmaEjE3ZmfGPIzEQW30HLscZ29v4p1L5MnTL7Rv99FjHqu7/OJskih5OZbGw6qD7SkHlj9K9rz6jda/uaYYLHdGRmisJ+8S8lcO9lU9JmSJmdU3lslvpzrm95x48uMxdfdKSUEg7M6yuZtfQstJxuZZ4WvywzydiI+87bma2FmMa6yxgmQExRZiGsfRa/nRmNu80QMksVsJaj6eANKXnHjyyzixPUnq+QSMRUkZiL0NTvusyWiyXEKOssm1mngzFkdmNsRF9ienkD+1kYJnj8JdPMMWSmzGJZ30Fepczs8yQzMzG1C5lTx/7alCQzU+9vory1ADVXuSau3y4zV18ME3SmswHwagHKvxVLCiPITBxvcMvMeqm7+wVEYySWc7u9d/xoMpP0J6Z2kmmmWPwXxzoyumMNa0iZtV7FvWV2vIOkWkCt5ypnmADzR2XWPW2iup6GFl7C7sBdQBsD2wmK7y9qd6i/OFRVLrObi+7e8aPJjPqbDyH/3lqI75GwHkagSWVGuDckhPiiBYdsaTw+FaBSWe2rVUYxi+GQt8zsLPG/PbQvrLJeB0fG4APADON3Ji4z55qOFktjeb2CI/vlNRn0whLGHvIJzYxVZ7LY2G+gnBskM8LcCHAcdPWIH01m4ujHC2TsLwLMYxkNbEQHyIwQGwFq/whKB7WidZQivHl51IMEfPg8i4gqxkdDclXH0YcSVE+ZERcGqkU7VhDi3Uwm0ExUZn87t8vsDkFZX4r+x+2fWzGMvwm0zI5exhHdakjr7hIHlPFt96ftDBNMAimzdmXJPE2vJUqo/a7vRKeI+D+RmTjy72THYBgmGAQ6M2MYxj+wzBiG8QUsM4ZhfMBP/A8V5axPJMiZaQAAAABJRU5ErkJggg==" InformativeScreenshot="9b72611790dc5f35d491dd1a8afe2b78.png" Reference="8mqe2vJVnkipbF0g__22OQ/GfyBaQKH0U6EqSZ9hqQ2Tg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Comarch ERP XT' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V2" Visibility="Interactive">
+          <uix:TargetAnchorable.Anchors>
+            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+              <uix:Target CvType="Icon" DesignTimeRectangle="643, 804, 76, 30" FriendlyName="'Drukuj Fakturę'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span' idx='3' parentid='angularView' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='cell cell-1of6 print-ico' parentid='angularView' tag='SPAN' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFAAAAAiCAYAAADI+15nAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFuSURBVGhD7ZexioNAEIbv/d/AWtDSwsJCUWxEQbATRBsLQbCysPaYzSZsPIObm13YxfngJzDMbPAjcfRnJ1CQQCQkEAkJREICkWgVWNf1V7ERrQLDMNwdx5EK9NqIdoEyYmT7TIQEIlEiMMuylwTVKcuSf4uZKBF4dk9TGZNRKvBss2JyO4GqubVA8T4Gv6b/QAJJoBy6LpQEIiGBSG4tcJ7nt0cSmSzLwqcf3FogvEE867KpqopPP3jWTUabwCRJWG2aJqlAL7wSipydaxpKBYqPLhCobdvGuz6zruvHeYjJKBHoed7rYsX4vs87rnFd9/QMqJuMEoFnCwMuPooi3nFNEARs5ngO/L1NRonAI13XMRlFUfDKNXEcs5lhGHjFDrQIhG0KMtq25ZVrmqZhM/BpE1oEpmnKZBw37VVgJs9zfoodaBEobtBvA7M2oUVg3/d/loFsxnHkp9iBFoF3ggQiIYFISCASEohi338BUSJUzh+NsmgAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image, CV" />
+            </scg:List>
+          </uix:TargetAnchorable.Anchors>
+        </uix:TargetAnchorable>
+      </uix:NCheckState.Target>
+    </uix:NCheckState>
+  </Sequence>
+</Activity>

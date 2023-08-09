@@ -1,0 +1,12 @@
+﻿{
+  "Id": "tD8eqcZvxke9Zq-cJAiDAA",
+  "Reference": "8mqe2vJVnkipbF0g__22OQ/tD8eqcZvxke9Zq-cJAiDAA",
+  "ParentRef": "8mqe2vJVnkipbF0g__22OQ/lcWRGnVw_UKIvGBmPnVnAg",
+  "Name": "Start Page",
+  "Type": "Screen",
+  "Created": "2023-07-13T10:15:31.5721584Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=23.6.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2023-07-13T10:15:31.5721584Z"
+}

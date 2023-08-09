@@ -1,0 +1,16 @@
+﻿{
+  "Id": "AL1nMVHEvU6Xo6wULxW4Iw",
+  "Reference": "8mqe2vJVnkipbF0g__22OQ/AL1nMVHEvU6Xo6wULxW4Iw",
+  "ParentRef": "8mqe2vJVnkipbF0g__22OQ/zKnKPefBXU2q6S7J7Uk4CQ",
+  "Name": "Dodaj Pozycję",
+  "Type": "Element",
+  "TaxonomyType": "Element",
+  "Created": "2023-08-02T10:07:02.4623078Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=23.6.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2023-08-02T10:07:33.4102822Z",
+  "UpdatedBy": [
+    "UiPath.Platform, Version=23.6.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,458 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Comarch_DodajProdukt" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="strProdukt" Type="InArgument(x:String)" />
+    <x:Property Name="wndComarch" Type="InOutArgument(ui:Window)" />
+    <x:Property Name="strKoszt" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1204,5399</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Comarch_DodajProdukt_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>OS.Standard.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Comarch_DodajProdukt" sap:VirtualizedContainerService.HintSize="1214,5334" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1152,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;Dodaję produkt &quot; + strProdukt]" />
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Nowa faktura" sap:VirtualizedContainerService.HintSize="1152,5042" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[wndComarch]" OpenMode="Never" ScopeGuid="9b45ff67-7d43-4d8a-9700-f38f95c1b735" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1118,4905" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NCheckState DisplayName="Check App State 'Dodaj Kolejny Produkt'" sap:VirtualizedContainerService.HintSize="1056,672" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="9b45ff67-7d43-4d8a-9700-f38f95c1b735" Version="V3">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears - Dodaj Kolejny Produkt" sap:VirtualizedContainerService.HintSize="450,455" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message - Dodaję Kolejny" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_4" Message="[&quot;Dodaję kolejny produkt&quot;]" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Dodaj Kolejny Produkt'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_10" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://app.erpxt.pl/#/invoice/new/22548301.354818225" ContentHash="fHzzx-5xbkuxIV_nAWEvug" CvElementArea="1013, 845, 34, 32" CvTextArea="1022, 854, 15, 15" CvTextArgument="+" CvType="Icon" DesignTimeRectangle="1016, 847, 28, 28" DesignTimeScaleFactor="1" ElementType="Icon" FriendlyName="'IMG'" FullSelectorArgument="&lt;webctrl parentid='ProductSelectionAddNew' tag='IMG' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='ProductSelectionAddNew' tag='IMG' type='' class='' aaname='plus-icon' /&gt;" Guid="69d87925-d5f0-40f2-b50e-32cf70e4e63f" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIXSURBVFhH1Za9SgNBEMeDnWBrraXPoG/iQ1iIvb6Chdr5QVJEFKy0sLCwEwXFQgURwSQGxY9IEpQIjvdbssvmkr3bjdHDHwxc7mZn/rs7O5ucZMz/ErBfeZfZ45pM7j7IaLEiQxslZTxP7T2qb/iE4CVg+aouEztVGSmUZfrwWZYu63JQ/ZDzl5YynnnHN3zwZYwPiQJOnlpqtuPbVZXg86v9IQF88B3buldjiZGEU0DxtqmWd+bo1StxHMYwlhjEctFTAANy6yU1k59CDGK5RHQJYMlQPYjkGmIRs9d2dAlg31i6QUNMYsfpEEDlUjz97HkaxKSY46ejQwDHJ2TpV68bynwhNjlsjAAaCGc4ZPYUF+YLsclhNysjgC5GIwkhVACQg1waI4BWGlr5/Qggh12MRgD9nJYaQj8CyEEujRHAOaWvu1iJqnfxoi6bUUPRpgXY7/DB1wU5yKXxFjCcL5uEaYavC6eAtC0o3DRl4exN5k9rxnRC+x0++cjXhXMLKIy/KkIKXmMEZH4MM29EENqKlYC1u/avdIjtbMXARcGF4bsKc9FSYj4Qk4su8TKCTK9jyPwPCWT6l0zDAFSzdCEnQ8MYxhLDlRycAoAlY98oHmbiIwQffClmxvZadptEARoql+PDGaaRkICWSl/HeOYd3/DBN17tLrwEaGggdDFaKf2c5cV4ZrZ8s5uMD0ECfoOMBYh8A4H1IOlIMuSmAAAAAElFTkSuQmCC" InformativeScreenshot="0d43a3ae164cd6f33cc673dca9a5bffa.png" Reference="8mqe2vJVnkipbF0g__22OQ/J9GX4zJhKUybF12zwE6DgA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Comarch ERP XT' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CvTextArgument="Dodaj kolejny produkt" CvType="Text" DesignTimeRectangle="1059, 852, 150, 19" ElementType="Text" FriendlyName="'Dodaj kolejny produkt'" FullSelectorArgument="&lt;webctrl parentid='ProductSelectionAddNew' tag='P' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='ProductSelectionAddNew' tag='P' type='' class='' aaname='Dodaj kolejny produkt' check:innerText='Dodaj kolejny produkt' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear - Dodaj Kolejny Produkt" sap:VirtualizedContainerService.HintSize="450,455" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message - Dodaję Pierwszy" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;Dodaję pierwszy produkt&quot;]" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Dodaj Produkt'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_11" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9b45ff67-7d43-4d8a-9700-f38f95c1b735" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://app.erpxt.pl/#/invoice/new/22548301.354818225" ContentHash="kQt0mqRjxkOEfWl7KCxF9w" CvElementArea="1040, 740, 35, 33" CvTextArea="1049, 749, 15, 15" CvTextArgument="+" CvType="Icon" DesignTimeRectangle="1043, 742, 28, 28" DesignTimeScaleFactor="1" ElementType="Icon" FriendlyName="'Dodaj Produkt'" FullSelectorArgument="&lt;webctrl parentid='ProductSelectionAddNew' tag='IMG' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='ProductSelectionAddNew' tag='IMG' type='' class='' aaname='plus-icon' /&gt;" Guid="8b42f150-bf1c-42cc-a484-b86a642b687a" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIFSURBVFhH1Za/LwRBFMcvOolWTelv4D/xRyhET+cvoBRCcUKiolAodEJCriFRKO7OhvhxHCEn8dxnYiZzezu7M+uY+CQv2ey+ee87M2/ebEUi878E7DffZPa4JZO7NzJabcrQWl0Zz1N7t+obPiF4CVi+aMvETiIjGw2ZPryXpfO2HCTvUnvoKOOZd3zDB1/G+JAr4OSuo2Y7vp2oBB+f3x9ywAffsa1rNZYYeTgFVK9e1fLOHD16JU7DGMYSg1guMgUwoLJaVzP5KcQglktEnwCWDNWDSK4hFjGztqNPAPvG0g0aYhI7TY8AKpfiKbPnRRCTYk6fjh4BHJ+QpV+5fFHmC7HJYWME0EA4wyGzp7gwX4hNDrtZGQF0MRpJCKECgBzk0hgBtNLQyi8jgBx2MRoB9HNaaghlBJCDXBojgHNKXy9is9tQtGkB9rsiyEEujbeA4fWGSVhk+LpwCijagsXasyycPcn8acuYTmi/wwdfF84toDD+qggpeI0REP0YRm9EENqKQwUQ29mKgYuCC8N3Fea6S4n5QEwuutzLCKJexxD9hwSi/pJpGIBqli7kZGgYw1hiuJKDUwCwZOwbxcNMfITggy/FzNisZbfJFaChcjk+nGEaCQloqfR1jGfe8Q0ffNPV7sJLgIYGQhejldLPWV6MZ2bLN7vJ+BAk4DeILEDkC8rIIxLob1jrAAAAAElFTkSuQmCC" InformativeScreenshot="d85dda0f8346ca33f0c61114d57d4dc8.png" Reference="8mqe2vJVnkipbF0g__22OQ/54vF2g5lrUCFHNL-BzsLPQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Comarch ERP XT' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CvTextArgument="Dodaj produkt" CvType="Text" DesignTimeRectangle="1086, 747, 98, 19" ElementType="Text" FriendlyName="'Dodaj Produkt'" FullSelectorArgument="&lt;webctrl aaname='Dodaj produkt' parentid='ProductSelectionAddNew' tag='P' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Dodaj produkt' parentid='ProductSelectionAddNew' tag='P' type='' class='' check:innerText='Dodaj produkt' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGYAAAAXCAYAAAD5oToGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARuSURBVGhD7Ze/bxpJFMf5M2gpU17pltKlS1qXLinduqR0SWEL4ygnr2JhLUJBSI584uTojliOgixFQjrMsvz0Ao6Fc0b63ns7s8vsYmz2colXp/1KK+384M3b95n3ZoghUigVgQmpIjAhVQQmpIrAhFQRmJDqp4ExzwzE9kxUZfs5WX+a2DjqonYnO15YVf0asTc9mLL9vG6ws0e/0W9kO5gUMBPk35AhNiafeK6FTb2PuvUg5/x7BQXTeG8gvteGPpQdL6wfAWb6h7nU5iKYQxPaxyEq9GintGv3qW+/Da35fXCCggmb/nswD0/aXATjn2gNkOYFjvqwZBdmt6iWDKwxNBp79dpE/stUDrIe0Dg3sZ4T4+uFHvSKD4x1g2xhbiOeM5C5uJWDDkgDeUN2eCQ+Ov1hBL3QQoL9228hXR3LcdIl7UZeb2Jh91eyT3MyV2Jo+qWH9GvRx7/bLA1hzcSY0BS18ty3FI1rJ/Tuxkasv3E2sVtCfhD+9pRAtMQ3NSeo0Lu9vvt4N+3zYCjItRL/0Ckr96gVeYEWts84swbIvnUWlFl11cEaLZY46kCnzNNP23bbs/hsDE3vQLsawzLpnQKsglgFTJx82DodKD5cY+fyXkyxwbSQPLxGUjORKXVRZf+NHlKKb5XfaQNRe40C6Gwt67xtBy150hOVo8hlVY1NUDB/y9LcIv94lQdMRyNk7Xh3UR/ewRqqG3slME6QWsg2qDHsY4udrozEIOtuiG3qixeFU7Ui2SGQ2sBukmTaPlXKmj1skI2dS9FcBYwni6UPsRN5KNlgKODvFD9JtXfCN12JaeNUbAriR7qFRhkWy3VQc7PIH5vVwWy8H6NB3zKH4mh5vFkBwHBGUOOzae+e7Qv1zFF/Kz+M3pmjI2FDATMZUcYYSB7QXP4g+QQC4waB5fNfgnHsCT3um3eutO0AlvKeBwHAHIuMjB0P3IwU+m4wzm6XpexZMPP35WDknFwb+auvmPLOpBITOGPCBGYmM9YHhivNpvYjMoZKDNfkeGEoiD9VyqRTopSZqLj/QZxzygHzSGAvvIFcCcwjpczx4XEwT5cysZaEd9hV4H2FdkR9PjC/qGWy0UWSffKDYcAzii3bPKDvd9cNCsa9Lg+QL7XFYh6Dyw5/PoO8h//a2644YM9MYccFM0KGb2xkV//rDo1PXWzRIc2ZGAgMPamyevjTrvysHv6LYJYd/nGl1DiH/3qxbx/+erktbn5uEMfI0q2O/dv9wDHoY8e55fnBOG257nyde1SOpY1PFmof6RJk9wstgmFj8kkcGNgqD2F+k1McrXpdluPrhT4alBFx5YyZ1jtIyet0gjaD3qRbCsEJAiZJUPg2516Xz5U0WAaGtOp1+RWP05MqW6izP+rubvaRJn95XFz16czUqL0MDMkBnvpN+qnYSBzQZUP02lLAhEsCzLJ//osf/X9T6MBMW5ZdmjKcvXxllf1eRWB+usyqSHcuD7t1tTyqisBEeiFFYEKqCEwoBfwDBHSD6su574QAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="https://app.erpxt.pl/#/invoice/new/22548301.354818225" ContentHash="fHzzx-5xbkuxIV_nAWEvug" CvElementArea="1013, 845, 34, 32" CvTextArea="1022, 854, 15, 15" CvTextArgument="+" CvType="Icon" DesignTimeRectangle="1016, 847, 28, 28" DesignTimeScaleFactor="1" ElementType="Icon" FriendlyName="'Dodaj Kolejny Produkt'" FullSelectorArgument="&lt;webctrl parentid='ProductSelectionAddNew' tag='IMG' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='ProductSelectionAddNew' tag='IMG' type='' class='' aaname='plus-icon' /&gt;" Guid="69d87925-d5f0-40f2-b50e-32cf70e4e63f" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIXSURBVFhH1Za9SgNBEMeDnWBrraXPoG/iQ1iIvb6Chdr5QVJEFKy0sLCwEwXFQgURwSQGxY9IEpQIjvdbssvmkr3bjdHDHwxc7mZn/rs7O5ucZMz/ErBfeZfZ45pM7j7IaLEiQxslZTxP7T2qb/iE4CVg+aouEztVGSmUZfrwWZYu63JQ/ZDzl5YynnnHN3zwZYwPiQJOnlpqtuPbVZXg86v9IQF88B3buldjiZGEU0DxtqmWd+bo1StxHMYwlhjEctFTAANy6yU1k59CDGK5RHQJYMlQPYjkGmIRs9d2dAlg31i6QUNMYsfpEEDlUjz97HkaxKSY46ejQwDHJ2TpV68bynwhNjlsjAAaCGc4ZPYUF+YLsclhNysjgC5GIwkhVACQg1waI4BWGlr5/Qggh12MRgD9nJYaQj8CyEEujRHAOaWvu1iJqnfxoi6bUUPRpgXY7/DB1wU5yKXxFjCcL5uEaYavC6eAtC0o3DRl4exN5k9rxnRC+x0++cjXhXMLKIy/KkIKXmMEZH4MM29EENqKlYC1u/avdIjtbMXARcGF4bsKc9FSYj4Qk4su8TKCTK9jyPwPCWT6l0zDAFSzdCEnQ8MYxhLDlRycAoAlY98oHmbiIwQffClmxvZadptEARoql+PDGaaRkICWSl/HeOYd3/DBN17tLrwEaGggdDFaKf2c5cV4ZrZ8s5uMD0ECfoOMBYh8A4H1IOlIMuSmAAAAAElFTkSuQmCC" InformativeScreenshot="0d43a3ae164cd6f33cc673dca9a5bffa.png" Reference="8mqe2vJVnkipbF0g__22OQ/J9GX4zJhKUybF12zwE6DgA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Comarch ERP XT' /&gt;" SearchSteps="FuzzySelector, Image, CV" Version="V2" Visibility="Visible">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvTextArgument="Dodaj kolejny produkt" CvType="Text" DesignTimeRectangle="1059, 852, 150, 19" ElementType="Text" FriendlyName="'Dodaj Kolejny Produkt'" FullSelectorArgument="&lt;webctrl parentid='ProductSelectionAddNew' tag='P' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='ProductSelectionAddNew' tag='P' type='' class='' aaname='Dodaj kolejny produkt' check:innerText='Dodaj kolejny produkt' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJoAAAAXCAYAAADz0VYRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAYcSURBVGhD7Zm/TxtLEMf9Z7ilpKR0S+nSJS0lJaVbl5SUFCAwEcgWkdEhFGREBPJTUOJEICykRI4Ctg//yhkbP/ME0ryZ3dn75TNnG2KS6L6SJXbvbm9m9rMzu0cIAgWagALQAk1EAWiBJqIAtEATUQBaoIkoAC3QRDRR0HLaNYS2aqBz+2ndQVYrw3y2BT3ucehMh9DqNSTOuD2G9OMyjlGGZJk7fGR80iGWqkK+yx1/uKT/OuS47a82JLdGmUNLTtDKNYjh5NEEqt/0RhkSuRYYj3zPMzQaaLfCqfBOAwzucegVQCu+L0N4tQJakzv+cP0S0IpVmPUY0xO02d06ZD838VeHlUwZprBvKlWD4jNhGw00H70CaH+bfgVog8b0BC123OYO0gMYpzqu5GuYz91xH6rdgiRCOI39NOGRFA5ee+CLpB7kD8oQWZPX5/abkN51GmlcVGExVRIgi+y5bR/Dxyk3aO2fkNjADLhtWxA+NvaB9tiB3L5lM9mTvRp0v7Qv9r7l8DOaqUFBhO8O0insW7+BPDVZvY/S7qWCPVYkOd7soSHGUzbPHRi2aoI+Yl/iTMaW7pl515KXfOfjAYofdIiuW3ZqWTsUHG/tp2hJuefA3cYxMSbh1ZKwiTK+mkv5s2I7BGioRwOWyMB0nctYG9Lb2F6rwPKpzHyJN9jeQKP5UeNDRcA5u1sT2TG9RwbhPXZwijVIHNQh/6ML+rc6xBGUwU65ZAftPyyzZI/t/cPY6ATnHvJ7JbxegeRlBwzdgOQOttfxft6TeYFGNszuVEFDH7XDCsxgO3IgJ7+Hezry2YKqC1oanyH4+qqDNV5sT1YUFTNrPiRokU1cnJsViO/rsHJOxvn7Cpc3EMFnp1I30tajimiPDxomoC+6GGNO2ddB/yiZ4JhaswtG81/osZ/DgaZesFmFIjXRaArowqltm/69ClF66UkHGx3puCOgbqP7RSuiz/EnQcNJ/4H39UGG8rXRBU6zDgt07egWA0RBwt+lvF9lTU/QvHzErCpsfpRgzOzzLpPfEcV39MtrvFtYIWAwBiLuDFpowwXqEL7m9/A53F+mG6KJepBbmXFA222CgfF3QMZyjmlpNNDYYf2EA34lr0pxEISh/DcaZJd7j9b7iisPS6cqO/I3GmiLbzHr4HOOIKP8bXSBcyGzj2WH9XsSNId97r4HyO/TGOgTgkFZPoRlZuW7uOiSt7/OiXPar+TvKy98HFsCKyX9GQO0tzos0tgIfEH0W3oeaLwyVel8EdD4XTPpGuRr9+K6p+OuwJvi0kmlbt5dJlDjghb/4t47WRodNBRnlvintiybKbX9cMvb35cBzRr7RUDDcaNpWXpfMKOpDR8FSwLxVKqWz/IKUqVWiDfHymj7HksIUznX91FAE2Bc1WAO/45gkEyLfG10gcNlzSxzHhoLNPY7vFMR4zsOVA7xswNKpxzPG7RhfJWlEw835jdAW7YVbX6/uQ9HdRsyc5nvt/wrYqRzGlUTAtxanCOBZn7eOK3BUrokIHNMIr7Qc/NJjjCj6jAQ5Y2tdlCRJxJlNAcnkmlAsXkLOdycztL1EUEzyxquanrf4kdlpb+NTnD4MIClbeGoCQW9A4XzBiQ1zLji7nFBsw4F4t0DP/bysyImzgPU3AkbPAi0IXyleFMGivDBJXusu+J9D9kMtUsQP6YxGrCChyFht+mPy78u2kMHuDeYUHhxFA9lDOP/4On53ACd/fUEjZxVv8gWGv9ZbigdGvLzhv2YXqCJMo12Xo9m6lD8av/YNxpolDlEaUIQ0gIE1MifN7qQR+DVJ4DQWgliO2gXXx4XNJUZwpmmbbG6xc++RchccbOeGQQaatjPG+ZnGPQLT41hM96otgHLCKyAC31fPG5B7h3+bfrj4Z8CeI8TkW2M8HoFNL7RCdpvJXbKnspfWRK0Mf4zUJDZu//bmV0DIP1L9BuCdg/6Babu0xt5WFAfJF9RvZIhSskSgUB7KO73k/GN/KjCguP74CAFoE1YeJCgQwNCNr2Nk6r2GK8oPSf3m+H1MiwXBhc/t+TGmP0wnspmpAC0QIGerQC0QBNRAFqgCQjgf+ciEzAg+lNRAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into Produkt" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="1056,225" sap2010:WorkflowViewState.IdRef="NTypeInto_3" InteractionMode="Simulate" Text="[strProdukt]" Version="V3" />
+            <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="For Each - Nawidacja do drop-down'a z VAT" sap:VirtualizedContainerService.HintSize="1056,411" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[Enumerable.range(0,3)]">
+              <ui:ForEach.Body>
+                <ActivityAction x:TypeArguments="x:Int32">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Int32" Name="currentItem" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,225" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey - tab" sap:VirtualizedContainerService.HintSize="334,137" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="tab" KeyModifiers="None" SpecialKey="True">
+                      <ui:SendHotkey.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="7fc0666b-6003-43ee-90e4-c6f3a06a6018">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:SendHotkey.Target>
+                    </ui:SendHotkey>
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEach.Body>
+            </ui:ForEach>
+            <Switch x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Kurs językowy nie wymaga edycji VATu" DisplayName="Switch - Wybierz odpowiedni VAT" Expression="[strProdukt]" sap:VirtualizedContainerService.HintSize="1056,1648" sap2010:WorkflowViewState.IdRef="Switch`1_2">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Sequence x:Key="Refaktura kosztów Luxmed" DisplayName="VAT + Przyczyna zwolnienia" sap:VirtualizedContainerService.HintSize="1016,1409" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="For Each - Down 7 razy" sap:VirtualizedContainerService.HintSize="954,411" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[Enumerable.Range(0,7)]">
+                  <ui:ForEach.Body>
+                    <ActivityAction x:TypeArguments="x:Int32">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="x:Int32" Name="currentNumber" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,225" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey - down" sap:VirtualizedContainerService.HintSize="334,137" sap2010:WorkflowViewState.IdRef="SendHotkey_4" Key="down" KeyModifiers="None" SpecialKey="True">
+                          <ui:SendHotkey.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="d6028783-c0e3-499c-b20d-9edbf23a0f69">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:SendHotkey.Target>
+                        </ui:SendHotkey>
+                      </Sequence>
+                    </ActivityAction>
+                  </ui:ForEach.Body>
+                </ui:ForEach>
+                <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey - enter" sap:VirtualizedContainerService.HintSize="954,137" sap2010:WorkflowViewState.IdRef="SendHotkey_5" Key="enter" KeyModifiers="None" SpecialKey="True">
+                  <ui:SendHotkey.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="56bd4acf-914b-49dd-9618-f9adcf552315">
+                      <ui:Target.TimeoutMS>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:Target.TimeoutMS>
+                      <ui:Target.WaitForReady>
+                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                      </ui:Target.WaitForReady>
+                    </ui:Target>
+                  </ui:SendHotkey.Target>
+                </ui:SendHotkey>
+                <uix:NCheckState DisplayName="Check App State 'PrzyczynaZwolnienia'" sap:VirtualizedContainerService.HintSize="954,666" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="9b45ff67-7d43-4d8a-9700-f38f95c1b735" Version="V3">
+                  <uix:NCheckState.IfExists>
+                    <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,449" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'PrzyczynaZwolnienia'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_16" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" Version="V3">
+                        <uix:NClick.Target>
+                          <uix:TargetAnchorable BrowserURL="https://app.erpxt.pl/#/invoice/new/820032207.5177588" ContentHash="utqdqFzRHUaWzsSnKiZ6zQ" CvType="InputBox" DesignTimeRectangle="341, 978, 372, 34" DesignTimeScaleFactor="1" FriendlyName="'DIV s2id_autogen9'" FullSelectorArgument="&lt;webctrl id='s2id_autogen9' parentid='content' parentname='form' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl id='s2id_autogen9' parentid='content' parentname='form' tag='DIV' type='' class='select2-container ng-valid ng-dirty ng-empty validation-error' aaname='' /&gt;" Guid="5977b753-39c9-43e7-8f9f-0db66056b85b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAXgAAAAmCAYAAADOboCVAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHrSURBVHhe7dhbaiJBFIDh2YmPbsyVuQjFC67AvLgAxRuGQBBECEi0ktPT3aMwT2PQ6eL74EB3VT3/FPUrAZAlgQfI1E3gz7NZOnU66aPdTh+tljHGmCbMd7Oj3dHwa3XgYyMOfXa76XI8lqsA/O+i2dHuaPh15OvAR/3jAADNFA2PllfqwEf53dwBmisaHi2v/Al8q1V+AdBU1y0XeICMCDxApgQeIFMCD5ApgQfIlMADZErgATIl8ACZEniATAk8wAOdTqf08vKSDodDuXLrcrmk/X6fptNpcfYeAg/wQJvNJg2HwzQYDNL7+3u5+lvE/e3tLfX7/eLMer0ud/6NwAM80Pl8TovFooj4aDRKr6+v9fp2uy3CHnvz+bxYu4fAAzxYhHu5XKZer5cmk0lxU1+tVmk8Hhdr8X1v3IPAAzxBdWOPoMdzTUzc3He7XfFU8xMEHuBJIuTxJh+R/+m4B4EHeKK4yccTTYT+J+MeBB4gUwIPkCmBB8iUwANkSuABMiXwAJkSeIBMCTxApgQeIFN/D3y7nS7HY/kHQNNEw6PllTrwp04nfXa75R8ATRMNj5ZX6sCfZ7Oi/HHATR6gOaLZ0e5oeLS8Ugc+xEbUPw7FO44xxpgGzHezo93XcQ83gQcgHwIPkKWUvgAKH8GyfdHMQAAAAABJRU5ErkJggg==" InformativeScreenshot="0ac0eea5dc78cdb693a36cc73456dfab.png" Reference="8mqe2vJVnkipbF0g__22OQ/-UIPeKL1X02uSlttsxmFyQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Comarch ERP XT' /&gt;" SearchSteps="Selector, FuzzySelector, Image, CV" Version="V2" Visibility="Interactive">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                <uix:Target CvTextArgument="Przyczyna zwolnienia (wartosc wymagana)" CvType="Text" DesignTimeRectangle="341, 1022, 40, 19" ElementType="Text" FriendlyName="'Dodaj'" FullSelectorArgument="&lt;webctrl class='link-btn' parentid='content' tag='BUTTON' visibleinnertext='Dodaj' /&gt;" FuzzySelectorArgument="&lt;webctrl class='link-btn' parentid='content' tag='BUTTON' visibleinnertext='Dodaj' type='' aaname='Dodaj' check:text='Dodaj' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACwAAAAXCAYAAABwOa1vAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJiSURBVFhH7VXPa1pBEM6f4bV/Qo659pijx1495ujRq0ePHj1UjIZApSXhQalYUiwPKiUGoZJDCVR9b43W+CuiaYSvszvztAZtokZqwQ8W3szszn6z+82+Hfxn2BJeN7aE140t4blw6vC/riBcFPsxjDqIvXEQzHfFwZgibFsV7FDS8YhX4X9bQ1b9khkrYFHC/SZC8Qr2Mm1xMGYQdhEtNJGlYeUUAintq9JGA5m1JBYlPAczCCvYYhvctRE9In+ihvOR+HCP1gUVc6jnV+BL0NXl2pgqqdxAkNb5KP4ipZDM16YJDzuw3rvYT3AOfZvTOW4Q1n7rRmzG44QJLds1SSOXbA++KeyR/fK0zjdx5hr7VU70NmojoouJ023l6bby1ziQ4iYnPEA2Q4UUOlDNDuyMY4oLF+8lvgJhFJXZLPh1SEYfVprmpWoojU98iOwJrz3XJhWkNw/YtyZqQDmYkNgPMSLNUtzvFf0chEMXunpJdNrkmEDlHJrjIOnQ92f5LktQ46GGRz06VRd+OnldiJEFjWchzGQ8STyBsPc9l/BQ9qJmJkkM7rSP865OuEsLtf6OrnFlHH+XhK19IgmWkKBUw+6YcBfJY5p/XIcyQUKZC1qC8ORZS58p+Okt5NPymmF+0+1/7PAEr+kOXcR00xXqCNHzONGwFE15Y5c9qO8/EZYXZQnCk+FLVBGwGii1JmQZT3zWzBvOz1r6R9MQGGv4j7heHy31kH23IOHNAhPe/TDnT+ed6r8cjFuUtCQ/KaP5gy998TM28IRbiJi+oZ44aeBq3NiMDZbEbGwJrxfAb8SgsP+jts86AAAAAElFTkSuQmCC" SearchSteps="FuzzySelector" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:NClick.Target>
+                      </uix:NClick>
+                      <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey - enter" sap:VirtualizedContainerService.HintSize="388,137" sap2010:WorkflowViewState.IdRef="SendHotkey_8" Key="enter" KeyModifiers="None" SpecialKey="True">
+                        <ui:SendHotkey.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="56bd4acf-914b-49dd-9618-f9adcf552315">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:SendHotkey.Target>
+                      </ui:SendHotkey>
+                    </Sequence>
+                  </uix:NCheckState.IfExists>
+                  <uix:NCheckState.IfNotExists>
+                    <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </uix:NCheckState.IfNotExists>
+                  <uix:NCheckState.Target>
+                    <uix:TargetAnchorable BrowserURL="https://app.erpxt.pl/#/invoice/new/820032207.5177588" ContentHash="utqdqFzRHUaWzsSnKiZ6zQ" CvType="InputBox" DesignTimeRectangle="341, 978, 372, 34" DesignTimeScaleFactor="1" FriendlyName="'PrzyczynaZwolnienia'" FullSelectorArgument="&lt;webctrl id='s2id_autogen9' parentid='content' parentname='form' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl id='s2id_autogen9' parentid='content' parentname='form' tag='DIV' type='' class='select2-container ng-valid ng-dirty ng-empty validation-error' aaname='' /&gt;" Guid="5977b753-39c9-43e7-8f9f-0db66056b85b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAXgAAAAmCAYAAADOboCVAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHrSURBVHhe7dhbaiJBFIDh2YmPbsyVuQjFC67AvLgAxRuGQBBECEi0ktPT3aMwT2PQ6eL74EB3VT3/FPUrAZAlgQfI1E3gz7NZOnU66aPdTh+tljHGmCbMd7Oj3dHwa3XgYyMOfXa76XI8lqsA/O+i2dHuaPh15OvAR/3jAADNFA2PllfqwEf53dwBmisaHi2v/Al8q1V+AdBU1y0XeICMCDxApgQeIFMCD5ApgQfIlMADZErgATIl8ACZEniATAk8wAOdTqf08vKSDodDuXLrcrmk/X6fptNpcfYeAg/wQJvNJg2HwzQYDNL7+3u5+lvE/e3tLfX7/eLMer0ud/6NwAM80Pl8TovFooj4aDRKr6+v9fp2uy3CHnvz+bxYu4fAAzxYhHu5XKZer5cmk0lxU1+tVmk8Hhdr8X1v3IPAAzxBdWOPoMdzTUzc3He7XfFU8xMEHuBJIuTxJh+R/+m4B4EHeKK4yccTTYT+J+MeBB4gUwIPkCmBB8iUwANkSuABMiXwAJkSeIBMCTxApgQeIFN/D3y7nS7HY/kHQNNEw6PllTrwp04nfXa75R8ATRMNj5ZX6sCfZ7Oi/HHATR6gOaLZ0e5oeLS8Ugc+xEbUPw7FO44xxpgGzHezo93XcQ83gQcgHwIPkKWUvgAKH8GyfdHMQAAAAABJRU5ErkJggg==" InformativeScreenshot="0ac0eea5dc78cdb693a36cc73456dfab.png" Reference="8mqe2vJVnkipbF0g__22OQ/-UIPeKL1X02uSlttsxmFyQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Comarch ERP XT' /&gt;" SearchSteps="Selector, FuzzySelector, Image, CV" Version="V2" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target CvTextArgument="Przyczyna zwolnienia (wartosc wymagana)" CvType="Text" DesignTimeRectangle="341, 1022, 40, 19" ElementType="Text" FriendlyName="'PrzyczynaZwolnienia'" FullSelectorArgument="&lt;webctrl class='link-btn' parentid='content' tag='BUTTON' visibleinnertext='Dodaj' /&gt;" FuzzySelectorArgument="&lt;webctrl class='link-btn' parentid='content' tag='BUTTON' visibleinnertext='Dodaj' type='' aaname='Dodaj' check:text='Dodaj' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACwAAAAXCAYAAABwOa1vAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJiSURBVFhH7VXPa1pBEM6f4bV/Qo659pijx1495ujRq0ePHj1UjIZApSXhQalYUiwPKiUGoZJDCVR9b43W+CuiaYSvszvztAZtokZqwQ8W3szszn6z+82+Hfxn2BJeN7aE140t4blw6vC/riBcFPsxjDqIvXEQzHfFwZgibFsV7FDS8YhX4X9bQ1b9khkrYFHC/SZC8Qr2Mm1xMGYQdhEtNJGlYeUUAintq9JGA5m1JBYlPAczCCvYYhvctRE9In+ihvOR+HCP1gUVc6jnV+BL0NXl2pgqqdxAkNb5KP4ipZDM16YJDzuw3rvYT3AOfZvTOW4Q1n7rRmzG44QJLds1SSOXbA++KeyR/fK0zjdx5hr7VU70NmojoouJ023l6bby1ziQ4iYnPEA2Q4UUOlDNDuyMY4oLF+8lvgJhFJXZLPh1SEYfVprmpWoojU98iOwJrz3XJhWkNw/YtyZqQDmYkNgPMSLNUtzvFf0chEMXunpJdNrkmEDlHJrjIOnQ92f5LktQ46GGRz06VRd+OnldiJEFjWchzGQ8STyBsPc9l/BQ9qJmJkkM7rSP865OuEsLtf6OrnFlHH+XhK19IgmWkKBUw+6YcBfJY5p/XIcyQUKZC1qC8ORZS58p+Okt5NPymmF+0+1/7PAEr+kOXcR00xXqCNHzONGwFE15Y5c9qO8/EZYXZQnCk+FLVBGwGii1JmQZT3zWzBvOz1r6R9MQGGv4j7heHy31kH23IOHNAhPe/TDnT+ed6r8cjFuUtCQ/KaP5gy998TM28IRbiJi+oZ44aeBq3NiMDZbEbGwJrxfAb8SgsP+jts86AAAAAElFTkSuQmCC" SearchSteps="FuzzySelector" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NCheckState.Target>
+                </uix:NCheckState>
+              </Sequence>
+              <Sequence x:Key="Refaktura kosztów Multisport" sap:VirtualizedContainerService.HintSize="472,355" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="For Each - Nawigacja" sap:VirtualizedContainerService.HintSize="388,186" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[Enumerable.range(0,2)]">
+                  <ui:ForEach.Body>
+                    <ActivityAction x:TypeArguments="x:Int32">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="x:Int32" Name="currentNumber" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,225" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey - down" sap:VirtualizedContainerService.HintSize="334,137" sap2010:WorkflowViewState.IdRef="SendHotkey_6" Key="down" KeyModifiers="None" SpecialKey="True">
+                          <ui:SendHotkey.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="65367e90-f05b-41f6-8dea-f2831124cf01">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:SendHotkey.Target>
+                        </ui:SendHotkey>
+                      </Sequence>
+                    </ActivityAction>
+                  </ui:ForEach.Body>
+                </ui:ForEach>
+                <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey - enter" sap:VirtualizedContainerService.HintSize="388,137" sap2010:WorkflowViewState.IdRef="SendHotkey_7" Key="enter" KeyModifiers="None" SpecialKey="True">
+                  <ui:SendHotkey.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="b077b3c7-f30d-4422-8706-92cddb10195a">
+                      <ui:Target.TimeoutMS>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:Target.TimeoutMS>
+                      <ui:Target.WaitForReady>
+                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                      </ui:Target.WaitForReady>
+                    </ui:Target>
+                  </ui:SendHotkey.Target>
+                </ui:SendHotkey>
+              </Sequence>
+            </Switch>
+            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey - Nawigacja do pola Koszt" sap:VirtualizedContainerService.HintSize="1056,137" sap2010:WorkflowViewState.IdRef="SendHotkey_10" Key="tab" KeyModifiers="None" SpecialKey="True">
+              <ui:SendHotkey.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="a5ca0152-2ef1-4adc-8671-9f7c4f5e7951">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:SendHotkey.Target>
+            </ui:SendHotkey>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into - Koszt benefitu" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="1056,225" sap2010:WorkflowViewState.IdRef="NTypeInto_6" InteractionMode="Simulate" Text="[strKoszt]" Version="V3" />
+            <If Condition="[strProdukt.Contains(&quot;Luxmed&quot;)]" DisplayName="If - Benefit Luxmed Zw. z VATu" sap:VirtualizedContainerService.HintSize="1056,1035" sap2010:WorkflowViewState.IdRef="If_3">
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="452,853" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="For Each - Nawigacja do Przyczyny Zw." sap:VirtualizedContainerService.HintSize="410,411" sap2010:WorkflowViewState.IdRef="ForEach`1_5" Values="[Enumerable.Range(0,8)]">
+                    <ui:ForEach.Body>
+                      <ActivityAction x:TypeArguments="x:Int32">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="x:Int32" Name="currentNumber" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,225" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="334,137" sap2010:WorkflowViewState.IdRef="SendHotkey_15" Key="tab" KeyModifiers="None" SpecialKey="True">
+                            <ui:SendHotkey.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="df8317dd-2872-49de-a54b-111db4949d07">
+                                <ui:Target.TimeoutMS>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:Target.TimeoutMS>
+                                <ui:Target.WaitForReady>
+                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                </ui:Target.WaitForReady>
+                              </ui:Target>
+                            </ui:SendHotkey.Target>
+                          </ui:SendHotkey>
+                        </Sequence>
+                      </ActivityAction>
+                    </ui:ForEach.Body>
+                  </ui:ForEach>
+                  <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey - otworz DD" sap:VirtualizedContainerService.HintSize="410,137" sap2010:WorkflowViewState.IdRef="SendHotkey_13" Key="enter" KeyModifiers="None" SpecialKey="True">
+                    <ui:SendHotkey.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="6512ef85-ea18-44bb-9842-6dbe7f1074bc">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:SendHotkey.Target>
+                  </ui:SendHotkey>
+                  <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey - Wybierz pierwsza wartość - Ustawa o VAT" sap:VirtualizedContainerService.HintSize="410,137" sap2010:WorkflowViewState.IdRef="SendHotkey_14" Key="enter" KeyModifiers="None" SpecialKey="True">
+                    <ui:SendHotkey.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="40778392-acdf-48e1-b0ea-413c3410f6a9">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:SendHotkey.Target>
+                  </ui:SendHotkey>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_34" />
+              </If.Else>
+            </If>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Dodaj Pozycję'" sap:VirtualizedContainerService.HintSize="1056,157" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://app.erpxt.pl/#/invoice/new/22548301.354818225" ContentHash="QQV51FzbgU2zEBeDUHmE7g" CvElementArea="1742, 936, 128, 41" CvTextArea="1760, 948, 96, 18" CvTextArgument="Dodaj pozycje" CvType="Button" DesignTimeRectangle="1744, 938, 126, 37" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Dodaj pozycję'" FullSelectorArgument="&lt;webctrl id='btn-addEntry' tag='BUTTON' visibleinnertext='Dodaj pozycję' /&gt;" FuzzySelectorArgument="&lt;webctrl id='btn-addEntry' tag='BUTTON' visibleinnertext='Dodaj pozycję' type='' class='xt-btn xt-btn-lg ng-scope full-width' aaname='Dodaj pozycję' check:text='Dodaj pozycję' /&gt;" Guid="3daa234e-c929-4efa-b292-762c8d3eb9fa" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIIAAAApCAYAAAD52PHQAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAUxSURBVHhe7Zy9bttIEMfT3XP4Ee4BrnGZR1Dr0t25TOvSpUoXBwQqWR10RQBVDnSwkbMPFxwRQ4YMJw4Yy5JXoiKRkijNzewuySW1tvVh+RxpFvjBJjlLzu78d3ZoWHoVRREwDAuBkUwJ4W2tC7/8cQM/vb2GV799YdYIiinFlmKcj3tGCL+eCOsNmPWDYm3GPhECqcTWgVlfzMyQCIFShs2YWV8o5lNC4Jpg86CYTwnBZsisPywERsJCYCQsBEbCQmAkLARGwkJgJCwERvJDCuGwDQCDEPYs16a5g1J7DKLhw7b1+kvlef1ejRBOQhAYq0yLxuBe+1BwLPZzMp8QOlAZoH2vDwXr9ZfK8/q9UiEE7QBKFz0kgGp3jGew9TGAS4phPiEws7BSIQivbZz3oHA1klrwru/S8xUfKrFIsAXhEEp/eka/Wyg2xxBM1HUhelD28RdDCIXzAdRDbUAtc4+2Wln3Cac2xIsjcD4GUFfu4eEIymffDDsPdi+GICJ9fTKGuufD68w98m0M1W/qvPe5ZdyrA1V6Tj+AHTp2BJREOj66t1trop3F77wtjtP5YM7V4jyjEBCnC6c0CJwEle5wsCEeTyI4vVSZw6XBR0M4rKg+O5/V7Ad+KLNLGSdCNmOCtv4OwW0GUPyrBbv/YECpS3J9FiFgw7FXyYfLAXjUf4I+vFM22+dDCPBU7INzE8ljGt8W3eP3WygctRTV7+BS/xCf5+SCTvyrxSEXQwMOBU3IBLybvhpfE0X8nmzzfmtb9LPiCigcd6HSw2PDz2V4XiHEgxsNYJ+O40m5uk1tzgZqkr/SP8cILZQhFJPt5JHAInseiQUnSB7PJgQzS23r1FC/oNXWgnIfD0ZDOEh8aECJslLyjBgP9hsU2DFU9EpVvkRQlsH9Agct6jeCEgXvKACPDltdJagMOb+1rbjppKLDVUNz5dbyfefn/xGCHtzuV5okmjTTBlcUnoX29/R3v5eZqHyN8BrTuotbQ5IyZZtPCJnJzPhv90EFGH0/Sc9tfUj7JbbvdQDlvXyVEfFe8k0AMw01Jbj0Poqc39rW1n48ITh6UvXW8CRC0M+iIrRYbUi7RTLC0kJwjOdkimGdPTALvtEZ8NTVgV9ACHbb5XlGIXh68nAw9YY699DWIPvqrSHeSiR3KlXHEzQVSC+XtmcTgm1rcGs06Y9sDfJcPLZ0SzDZcukZY/B6+MPc5o61iOfYGuy2y7NSISSvj5dYzPVV3g5wpSfVNg3WVixSFZ8rFoVQ93Ka6jiZIC2mwO/Dm6MOHOpCbl4hUKCkD3GxSAXrI8Vi0OjIoMRbQtDswk68fx81YTsRji4ayQb3+PT5WtRGseh4Q6h8omt5v83Csgf7xwL2z/tQaWMmTO63OCsVgtmCAQb7QsDPedsZXx/jJnCyD2j1JROUvR50A9j7SFllHiFM4PQq9/qYWdkPvz7GmS7bsvWDKiInUD1Lz0lw/OW20T/CftLG4rfTgiKKUOohbtEADsz7LchqhPCi0BOavLLmsNUIT45e+eZr5KM87LfMQsZr9rKssRAasPeJUj2uZIp0y7fYIKsUwrs2FOlvA/pvH25N10YPMpvf8jVUPF29sMZCEHr/xYbbTfG+lbNKIcRb5GQC9evO9LZoZTa/Zd1CW0QYwq7l+ryssRCYeWAhMBIWAiNhITASFgIjmRICf/Zx87B+9pE/Db15WD8Nzd+PsHlYvx+B4G9M2Rzu/caUGFIJpQyuGdYPiinF1swEMVNCYDYTFgKDRPAfbgKlTKg0gPkAAAAASUVORK5CYII=" InformativeScreenshot="45de0b9c1de2422dfc2e5796c23e3848.png" Reference="8mqe2vJVnkipbF0g__22OQ/AL1nMVHEvU6Xo6wULxW4Iw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Comarch ERP XT' /&gt;" SearchSteps="Selector, FuzzySelector, Image, CV" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Chrome" ContentHash="A1z_PfFSGUO1tvovuHfyiQ" IconBase64="iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAifSURBVHhe7Zt9cFTlFca3lQawBJKg44xOO+rY0c600KJAgIRWpTqOQKcyWj9qW2oHSkshISSpinzEpokFkUhIkJBkA3QYQ1Bp6TiVIkIgoGiblKZoQEM2GDFf7Eey2Y/sPj3n3vd67yY3YTd7d9k4e2ae2Rn+gPv8znPe99xNMF03NxvDKxfj71qIsn1VGFgNn3tQ8T8nqpr6Rp12n+uDze1DHIC+aa3iAOIA4gDiAL5cAMwf9eEv5w0AUH/RhfIzvbr/SCzKLD53k545bsNFuzcIAOkMYAEBMAvban3Y6cGuD+wwUwrMTaMjCRz9rKNW3PBSK852uoNJQA7GTV2Iiuo9wrZaHp8f73/mgvmkDZWNsZ0Ejj13PpvMTyyyYEy5BU1WTzAAsjH+9l/jJ4ty0d7eIayr5fH6UHfeKZIQuxB2UedzyPzkTa0wbW1BQlUrmmxBAViNlFk5GHP9PPz0ieW43N0lrKvFSTjd5iIIDlSejT0I3PmcWiuSN5P5l1tgqrCEACBd/kyZk4kJU36Gx5dlob27W1hXyytBcKNKnAl6DxJtcex30ecfam1IKiXzZRbJvKmyNZQEkNJXS5+T6Tz4euqTeOyZ9ei22YR1tTgJ734qJ8EcA0ngA4/NX08HnmkHdZ6MKwoNgEYp6Ssxhq7FJ58rgK2nR1hXy80QaByqruI4SAcemX+WrrqUF8lwkRx7AwDISUhJz0LirKVYvG4zOq1WYV0tTsIpSgJDiPY4SLFn8ydsuK6YzIqZ15oPA4AiBsHj8Dh+uS4f9p5eYV0tF0E4SYuSdCac5T1B/4GNFnd+TZ1NuudNOwYbVxQmAFnJaSswZvoCPJVXSBD0x0GGEPlxUGK/lsxLM68Te60MACCPQ3LaSoybsQhLnt+Cy3a7sK4WQ6gTECJ1MCpLzto6O27YRgaHiL1WhiRAVQ4mzl6K3xa8jN6+PmFdrb5+P45bIjcO3Pn1tI3e+MpF+arTMTxQBgOgZSltNRJm/BjLCjbB0atzJhCEExbqFkP40JiDUYl93inqPC85xYFX3XAyGADtCLQr8JkwPvVh/K6wWPdMYAi1BEEeh/AgKKf9hlPU+VLq/BVmfqAMB6DVpDlLsXJjCfpcLtm5ppwCwu5/EYQwksAzn/euHTeVfRp07LWKKABOQ+KspwhCEY2DU1hXiw/Gli56lR4BBCX2+WT+xhKe+eBjr1VEAbB4HK5NfQQZm7aj1zn4YOQ94VgLmeJxCBKCYv55Mv+NIjK/JbTYaxVxALLodpizBLlFZXB7PMK6Wr1eP45eCG4cFPMFpx34JseeD7wRmmdFCQCvzdl0Rf4K2VtKdK9IN50JzfzN0jAQlAOvkM1z7Ae82IxEUQPA4nEYN3O+BKHP5RbW1XJ6fXinmczqQJDM02f+e3bcspU6v/lCWJ1XFEUAysb4e0rCYqzZVgmPV28cfDhCEHgcKgUEJfYvvO/AzRz7bdT58vDNs6KagC/eItP4ilwiQXDqXJF8O1hoHKobKAm0Jyjmb9lJ5g2IvVZRBqBqMp0JE2Y/iudKy+DxeGXn2vL7Uc/fJ1ASCsn8bSVkvpTNG9N5RVcNAH/FlpS2HNdO/TnyN+0VrgPLSbfDnsYe3LpDnPYGxV6rqwNAfL848c5MTLl7PV7Yc1BYDqxP7B7MfLOdYk8n/lZ64C8NAFLitAzc89CLaPyoTdgNrHP0UGlvdcC0/3OYDtDnrkv0eksPbTCE6AIQnZ/w/ZX42m1LUbr/iLAbWJYeL9LeJON722TzkkQSeOszEEL0AHwR+wx87948rC8/AJfOVths9+KHh8hwDQF4g0xrAbxGf8bXoIFJiGoC2PzchRtR/1+LsBtYLQ4v7vknmVViP5TMn8kQRsUiJDqfSObvmLsWDY2twm5gtfV6cS+b587rmdaKk8EQighAmEmISgIm3ZWJr9LM55bWkFW/7FhTF6jz9x0mY4NiP4wMGoeIA5hI5uc8+GcUv/o2enX2f+78/Yc7rxx7Pb1BquRxIAAx9TqsHHhk/uaZT+ODhhZhN7AuOfvxgNJ5PYPBiBPDEKRx0Dc5nCKWgKTpq3ANxX7FS3vR7+sXltVqpavuwSPU+Rq634ON/VDicZC+D+Qk6BsdSsYCkDq/mjqfgdQHCrF93zuwOwO/CvPTjn/J6cUCxbyeoZGIR6ic9gbeGEMYB+MAiNgnz1iF6ff9Caf/3SwsB9bpLjfS36KOS7EPs/N6qqBx2MrjEBwEQxOQROYTvrUMB99uEHYDiw+8+Ue6xGmv8/BGiMeJbwfp63F901qFD0C55yn2d87Lx46aY+i0O4Rltbpd/XjoKJs3MPZDSRmHIJal8AAop/30TEy9Ow91750XdtXqp5lvpnv+kWNkfh+bj0Ds9cRJKBfjMAyEsBMwaUYmpv3oj6g92SQsBxa/2KT+gx4olCXHKAUBYWQAROeTZq5C4u3LsW77AdrvBm94Vnc/HquNUuyH0hUgjDgB3PnvzN2AQ0cbYR3wUx8fxf4Tiv0Tx0Xso935geJ/f6c+hNAAKDNP5qfQzB8+dlZYDize8NKkV9oYMK+Ibx2GUBwIIQQA4mvt1CxM+vYKZG2ulpaageXw+PCLE93yzOs9yNXU69QM/sUJDYSQEpA86ze4NTUDBw+dgW3QDzv9+Jhiv7iuG1+Jhdjrip7pNR4H3hhlCCEAyMXY796PNRsL4PYM3u3rL3vwA36fj1nzGvHzlcnjkGC2BA9g3LT52Knz2+J2Ou0fVu75WDevSEBIKKEEWIP6bfGh/7/AxjN2XFM9iswrojMhgd4dmrqCTMBQADbUO2B6dZSZF+8iCX/tQJOjPzwAeQ09MFWPMgBCCX+LA4gDiAOIAyAAN817GsPrWSTNXoSK/buFbbXy/9ODsTXtGEt/2WhT4t87cI4BfNzagSvpvKUNVsfg/yHS5fJJf8moVE8/3D4//g+b3YNudIQJeAAAAABJRU5ErkJggg==" InformativeScreenshot="7b240214b8eb16ff88d618889fb819e5.jpg" Reference="8mqe2vJVnkipbF0g__22OQ/zKnKPefBXU2q6S7J7Uk4CQ" Title="Comarch ERP XT" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

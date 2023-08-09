@@ -1,0 +1,16 @@
+﻿{
+  "Id": "g4XPoVXTvUGngyMn-pYObg",
+  "Reference": "8mqe2vJVnkipbF0g__22OQ/g4XPoVXTvUGngyMn-pYObg",
+  "ParentRef": "8mqe2vJVnkipbF0g__22OQ/zKnKPefBXU2q6S7J7Uk4CQ",
+  "Name": "VAT",
+  "Type": "Element",
+  "TaxonomyType": "Element",
+  "Created": "2023-08-02T09:13:56.516675Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=23.6.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2023-08-02T09:16:30.5183333Z",
+  "UpdatedBy": [
+    "UiPath.Platform, Version=23.6.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

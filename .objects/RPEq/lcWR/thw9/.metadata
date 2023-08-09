@@ -1,0 +1,12 @@
+﻿{
+  "Id": "thw9cmsryUK93oKNIESwuw",
+  "Reference": "8mqe2vJVnkipbF0g__22OQ/thw9cmsryUK93oKNIESwuw",
+  "ParentRef": "8mqe2vJVnkipbF0g__22OQ/lcWRGnVw_UKIvGBmPnVnAg",
+  "Name": "Comarch Password",
+  "Type": "Screen",
+  "Created": "2023-07-12T14:35:02.4355531Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=23.6.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2023-07-12T14:35:02.4355531Z"
+}

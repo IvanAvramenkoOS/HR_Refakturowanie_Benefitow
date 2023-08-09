@@ -1,0 +1,16 @@
+﻿{
+  "Id": "EwBW2sd-zkWr37uOy6Q4ow",
+  "Reference": "8mqe2vJVnkipbF0g__22OQ/EwBW2sd-zkWr37uOy6Q4ow",
+  "ParentRef": "8mqe2vJVnkipbF0g__22OQ/zKnKPefBXU2q6S7J7Uk4CQ",
+  "Name": "Wybrany Kontrahent",
+  "Type": "Element",
+  "TaxonomyType": "Element",
+  "Created": "2023-07-30T11:34:55.2860022Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=23.6.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2023-07-30T11:36:15.9154108Z",
+  "UpdatedBy": [
+    "UiPath.Platform, Version=23.6.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

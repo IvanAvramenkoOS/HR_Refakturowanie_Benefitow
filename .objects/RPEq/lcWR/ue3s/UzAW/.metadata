@@ -1,0 +1,13 @@
+﻿{
+  "Id": "UzAW8Ca8j0GvNjrbesnHQw",
+  "Reference": "8mqe2vJVnkipbF0g__22OQ/UzAW8Ca8j0GvNjrbesnHQw",
+  "ParentRef": "8mqe2vJVnkipbF0g__22OQ/ue3sjeVqLEW6kGA8-g3uSQ",
+  "Name": "Dodaj fakturę",
+  "Type": "Element",
+  "TaxonomyType": "Element",
+  "Created": "2023-07-13T13:25:57.7854432Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=23.6.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2023-07-13T13:25:57.7854432Z"
+}

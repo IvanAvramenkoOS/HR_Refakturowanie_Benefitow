@@ -1,0 +1,272 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Comarch_LogIn" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="strComarchLink" Type="InArgument(x:String)" />
+    <x:Property Name="strUserName" Type="InArgument(x:String)" />
+    <x:Property Name="sstrPassword" Type="InArgument(ss:SecureString)" />
+    <x:Property Name="brChromeComarch" Type="OutArgument(ui:UiElement)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1792,3164</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Comarch_LogIn_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Net</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>OS.Standard.Activities</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Net.HttpListener</AssemblyReference>
+      <AssemblyReference>System.Net.NameResolution</AssemblyReference>
+      <AssemblyReference>System.Net.Primitives</AssemblyReference>
+      <AssemblyReference>System.Net.Requests</AssemblyReference>
+      <AssemblyReference>System.Net.ServicePoint</AssemblyReference>
+      <AssemblyReference>System.Net.WebClient</AssemblyReference>
+      <AssemblyReference>System.Net.WebHeaderCollection</AssemblyReference>
+      <AssemblyReference>System.Net.WebProxy</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Comarch_LogIn" sap:VirtualizedContainerService.HintSize="1802,3019" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Comarch: LogIn" sap:VirtualizedContainerService.HintSize="1740,2671" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OutUiElement="[brChromeComarch]" ScopeGuid="2d20bbd5-d5e4-4837-9b98-0627cc3c3291" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1706,2454" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick ActivateBefore="True" ClickType="Single" ContinueOnError="True" DisplayName="Click 'Cookies Button'" sap:VirtualizedContainerService.HintSize="1644,157" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2d20bbd5-d5e4-4837-9b98-0627cc3c3291" Timeout="5000" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.erpxt.pl/rejestracja/" ContentHash="P5XR1gcm4k-PQLc1s3SLUg" CvTextArgument="Zgadzam sie" CvType="Text" DesignTimeRectangle="938, 833, 134, 39" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Cookies Button'" FullSelectorArgument="&lt;webctrl id='wt-cli-accept-btn' tag='A' visibleinnertext='Zgadzam się' /&gt;" FuzzySelectorArgument="&lt;webctrl id='wt-cli-accept-btn' tag='A' visibleinnertext='Zgadzam się' type='' class='wt-cli-element medium cli-plugin-button cli-plugin-main-button cookie_action_close_header cli_action_button' aaname='Zgadzam się' check:text='Zgadzam się' /&gt;" Guid="1395a46a-10f9-48ff-bb7b-6f1a19cd8a57" ImageBase64="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" InformativeScreenshot="b76dac5e5d10fb023def3c08f3965725.png" Reference="8mqe2vJVnkipbF0g__22OQ/srK6Wq2cPkWI4zZ5h4XczA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Rejestracja - Comarch ERP XT*' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'LogIn button'" sap:VirtualizedContainerService.HintSize="1644,157" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2d20bbd5-d5e4-4837-9b98-0627cc3c3291" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.erpxt.pl/rejestracja/" ContentHash="u4OuG85vUEme8cPKs61r2A" CvElementArea="1199, 216, 148, 45" CvTextArea="1232, 230, 82, 18" CvTextArgument="Zaloguj sie" CvType="Button" DesignTimeRectangle="1194, 107, 142, 41" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'LogIn button'" FullSelectorArgument="&lt;webctrl id='zaloguj-sie-cookie' tag='A' visibleinnertext='Zaloguj się' /&gt;" FuzzySelectorArgument="&lt;webctrl id='zaloguj-sie-cookie' tag='A' visibleinnertext='Zaloguj się' type='' class='btn-erp' aaname='Zaloguj się' check:text='Zaloguj się' /&gt;" Guid="70c606ed-f603-4ab9-af1b-18c2bda61728" ImageBase64="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" InformativeScreenshot="56c1fde4ed62be6873d0bc82710c4902.png" Reference="8mqe2vJVnkipbF0g__22OQ/av-L_mod_0q24ZWcdDuwgg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Rejestracja - Comarch ERP XT – Nowoczesny program do zarządzania mała firmą' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NCheckState DisplayName="Check App State 'Dalej'" sap:VirtualizedContainerService.HintSize="1644,1945" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="2d20bbd5-d5e4-4837-9b98-0627cc3c3291" Version="V3">
+              <uix:NCheckState.IfExists>
+                <Sequence sap:VirtualizedContainerService.HintSize="1140,1728" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="1078,1613" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Sequence sap:VirtualizedContainerService.HintSize="1016,1498" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into email" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="954,218" sap2010:WorkflowViewState.IdRef="NTypeInto_3" InteractionMode="Simulate" ScopeIdentifier="2d20bbd5-d5e4-4837-9b98-0627cc3c3291" Text="[strUserName]" Version="V3">
+                        <uix:NTypeInto.Target>
+                          <uix:TargetAnchorable ContentHash="aVvlrnBquketscRbrKDPDA" CvElementArea="810, 524, 317, 42" CvTextArea="826, 537, 92, 17" CvTextArgument="Email lub login" CvType="InputBox" DesignTimeRectangle="827, 536, 283, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl tag='INPUT' name='username' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' name='username' type='text' class='cds-control__value cds-control__value--input cds-control__value--single-line ng-pristine ng-valid ng-touched' aaname='' /&gt;" Guid="cb8ca2d8-1860-4301-ba3e-04cec266b7a7" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAR8AAAAYCAYAAADDJflBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANqSURBVHhe7ZvrSypBGIfPf61dpDC6goHSRYguEhHSxc8a9Km+KBHUhyIiihLCgkzsSvkefi9OZ5xsXc85nj3h74HB3Xl3Z2eC92FmdvshhBASAJQPISQQKB9CSCBQPoSQQKB8CCGB8N/IZ2VlRYtLuVyWkZEROTg4qNd4gza2trbqZ97gupmZGXl6eqrXEEL+FR/yQQIiEUOh0KfiN/Hb4fn5WY6Pj/UXfHf5uOMhhHjzST5+E/dPubq6kuHhYTk5OdHz7y4fdzyEEG8Ck4/Ld5cPIaQ9fMsHEojFYrK5uSnRaFTC4bBMT0/L+fm5LC0tSU9Pj/T390sul5O3tze9B0sQXI96XJ9IJOT6+lpjFxcXKhX8Ar/yQf/s69y4aQfPwjPR1729PanVahq3ceVzf38vqVRK+vr6tOAYdQb03W43nU7L6Oio9qHZeNbW1rR9/G0GBgakUChojBDiY8/HJKdJ8tXVVXl8fJTb21tNxEgkIvv7+/Ly8qK/SMqzszNtM5PJyOzsrFQqFXl9fdV75+bm9LiT8hkbG9N20aednR3tk3mOjS0flGQyKcvLy3pcrVb1GHXmPB6Pax2OS6WSzM/P67O/kg/Oj46OtB/ZbFb7dXd3p3FCup22Zj6Tk5MNSezOHGwRYKaBJDUxgHqvZP1b8rHHYMa1vb1dr/mF3X9sFqOdm5ubelT0GHWInZ6eqjzseKvxQDgGN05It9Mx+QDMjjA7wBLGzKS8krUT8gHN6oDdf9xvjwVghofZHWIopu8Gu67ZeOxnunFCup2OyQdLKyyxNjY2NIlBq2S1pWKw2wR4JpY+Zg/HjbtJb8YVxMzH7ocbJ6Tb6Zh8sM+B/R7I5+HhQZMWG7heyepHPvl8XiVQLBa1XSxtent7G+Tj7vkMDQ3J5eWlxm3s/qN47fmYWZC954MNd6/xUD6EfE3LDWcUJFG78gFI+ImJCW0D38Csr69rHCJqlqx+5AMJQAB4g4Tl3OLiogwODjbIB2+ZIAbzVurw8ND32y7z5s7P2y5soKNvlA8h7fMhH9Ka9/f3BolhFjY1NfUhL0KIfygfn2AJt7CwILu7u/odE2ZB4+Pj+h1Ts1kVIcQbyqcNIBws58wHlRAP/5eLkN+D8iGEBALlQwgJBMqHEBIIlA8hJBAoH0JIAIj8BIS1jEqHw0JAAAAAAElFTkSuQmCC" InformativeScreenshot="1418af1d7a27230a289ad0b940b6b762.png" Reference="8mqe2vJVnkipbF0g__22OQ/d-zqhv7oB0m8IADBzgHOGw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SSO' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                        </uix:NTypeInto.Target>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uix:NTypeInto>
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Dalej'" sap:VirtualizedContainerService.HintSize="954,157" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2d20bbd5-d5e4-4837-9b98-0627cc3c3291" Version="V3">
+                        <uix:NClick.Target>
+                          <uix:TargetAnchorable ContentHash="htHP97GBskWhw2uK_V2kgw" CvElementArea="1023, 603, 105, 45" CvTextArea="1057, 617, 38, 18" CvTextArgument="Dalej" CvType="Button" DesignTimeRectangle="1026, 606, 100, 40" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Dalej'" FullSelectorArgument="&lt;webctrl tag='BUTTON' aaname='Dalej ' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' aaname='Dalej ' type='' class='cds-button-primary ng-tns-c62-2' check:text='Dalej' /&gt;" Guid="96be8161-9ca4-417c-9442-cebadb0d48ed" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGgAAAAsCAYAAACJ1f3bAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQQSURBVHhe7ZrPTxNBFMf9/4w341FuBG96MepF40EPmGjUBBIiMSoqMRKiIUEjKgGNooQQiJpoQBBs+dGWltKWbtvnfqfOdru87e62dHeA+Sbf0Gx3tt33Yd6+edNjpKW0NCDF1TKg+R8FejKcpqs3N6jrQoxOda3QiY4/dPz08pEy7hn3jhggFogJYtOqmgK0Gjeo/2mKOs6usl9Wu2bECLFCzJpRIECpdJnu3k+yX0Tb24gdYhhEvgG9ep8VU5j7YG3/RgwRS7/yBUjPmv03YupHnoDwwOM+QLt1I7ZeaghIw2m/vSC5AtJpLTw3SncsIDzEuAtpt89uhcMeQCgDdbUWvhFzrgTfA0intujMpbo6QFjtcgO1w7Oz41AHCC0JbpB2eAYDu+oAHabe2sx8XtzTQSt4wMAuCxA6r9yAMC2DKlWpEKUzZXo9ng38zxMU0K2+BG1ny5RIluhy9zp7Tli2d8EtQGiPcyeHaRnULRPKwnKRVmIGGUZFgFpYKtKZizF2HOdmAGW21QAEFlIWIBW6BjKo+CuP4XttJEoC0psJ/+kqKCCVbO8uWICw0cSdHKY5QPDI2LYAhAqn8/xfcaxvIEXxDYPK/5cO2Z2yAHiys7pZyAHCmDVzDK4FY7b0D26J9270JiiXrwjjtRwThcFCygKkwuLUDRDSDwKXMZ8R1+5s0u17CQEE6W/OzNdfZvOUL1TIKFXo2ctqqnYC6nmQFNfYLVZoaaUojNcY1/swpRQgsJCyAKmwTe0GyBm87p5NMVsGX9Sem+OfdurGOgH9WtwVswaz0Tlmei6vFCCwkDoQgJwzCMeej2QokSpZKU6KA3Tp+jptmunMTYtmQaI8IJVTnPMZ9NiscpDekOaGRzMioBOf3WeQBFQyGeH42GS2zpiJKgFiU5yqRQJXxU2bKQma/VZbu01O5cQxOVZey5nipmZyViGBv3JGqgSILRJUKrO91kGYNUht8oEfW6tVc26ABobS4nxcK75uiOsjRWJWYYaqBIgts1VaqEohmMmtEo2+q+8k4D//7YcdKuyaJ5hCB+D7z+oM+W0Cw/tOQLC9NMe5GIfr4NoqAWIXqiq0eqK0SoDYVg90mJqlQfzxa85awGKGnbsSZ88Lw67NUuiobjegzIaQ8h4NVTsLUbnhdoPesIveDTfsIL3lHZ09t7wh/aORaIyY+/rRCGQvTbXDMWLOiQUE6VQXnrnUJuUKCFKhu3DYbe8acGoICNKQ2mcvOJAnIEinu/13o7Rmly9AEB5iurpr3YihW0HAyTcgCGWgnk3NG7HjSulGCgRICqtdtCSOau8uiBEjxMrZIfCrpgDZhc4r2uN44GGjCVNYhe3zsI17xr0jBogFYmLvSjerlgFptVcakNIi+ge8C88ENhv5DQAAAABJRU5ErkJggg==" InformativeScreenshot="4fa9dbc6007b2b89f1dc84d5ef613b81.png" Reference="8mqe2vJVnkipbF0g__22OQ/d9lERCto2UOlJ3y5BQ7sFg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SSO' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                        </uix:NClick.Target>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uix:NClick>
+                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into Hasło" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="954,218" sap2010:WorkflowViewState.IdRef="NTypeInto_4" InteractionMode="DebuggerApi" ScopeIdentifier="2d20bbd5-d5e4-4837-9b98-0627cc3c3291" SecureText="[sstrPassword]" Version="V3">
+                        <uix:NTypeInto.Target>
+                          <uix:TargetAnchorable ContentHash="AG7gOxeRfUup9pqnWc9M0g" CvElementArea="810, 522, 317, 42" CvTextArea="826, 535, 38, 14" CvTextArgument="Haslo" CvType="InputBox" DesignTimeRectangle="827, 534, 255, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='password' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='password' class='cds-control__value cds-control__value--input cds-control__value--single-line ng-pristine ng-valid ng-touched' aaname='' /&gt;" Guid="e9cb70ce-8844-4324-a141-30c83b39297c" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAQMAAAAYCAYAAAD+t5gnAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHzSURBVHhe7dnZasMwEIXhvk32fd/ISnbI6vd/lGnPgIxD2oILaQ39Lz4SWbLsmzmW7LcoigwACAMAjjAA4AgDAI4wAOB+NQyOx6N1u11bLpd2u90+HQPgb8RhcL1ebTgc2mQysdPp9DBosVhYr9ez/X7/cDwtwgDILsIAgCMMALjUYXC/322z2Viz2bRCoWDlctmm06mdz+d4HrUrlYrl83lrNBq23W79PIVBu922Wq1m6/XaA+G7uQD8nqcwUFHmcrknKmqFwW63s06n4wGhc1TUKvDVauUFH4JDAXC5XDxc1NZxjSsWi17w6lMQ6Nh8Pve2zlF7Npv53MkbBfBaqVcGepprrApffRrb7/e9gFXQCoVQ4HrCq1/nhd+wTdDY0Whk4/E4vp7m1Dya73A4PNwDgNf6URioraW+tgFaNWg1EZ72KmitFlqtlq8CqtWqF7/mT74zUFAoDMKqIFxL5w4GA79W8h4AvFbqMNCTXwUd9vwaG1YGKnAVvKhPwaDC17ZCWwI97VkZANmUOgz0X8WtMFDxq7Dr9Xr84k/FrH7t/xUI6lcAqJ0MA/XxzgDIjtRhoHEaUyqVfBug4tXLxbBNUL/+h68JX20TwsqBrwlANsRhAOB/IwwAOMIAgCMMADjCAIAjDAA4wgCAIwwAfIjsHfj1Jiw+KphVAAAAAElFTkSuQmCC" InformativeScreenshot="d64922b6ed402c0a851b0c6091efd7a0.png" Reference="8mqe2vJVnkipbF0g__22OQ/p2h4JTaBgEmgWCMNZpBxLA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SSO' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                        </uix:NTypeInto.Target>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uix:NTypeInto>
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="10" DisplayName="Click 'Zaloguj'" sap:VirtualizedContainerService.HintSize="954,157" sap2010:WorkflowViewState.IdRef="NClick_6" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" Version="V3">
+                        <uix:NClick.Target>
+                          <uix:TargetAnchorable ContentHash="Sxln0g4gJU2Jpwbp1LYL2A" CvElementArea="1005, 729, 124, 46" CvTextArea="1038, 743, 57, 18" CvTextArgument="Zaloguj" CvType="Button" DesignTimeRectangle="1008, 732, 117, 40" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Zaloguj'" FullSelectorArgument="&lt;webctrl aaname='Zaloguj' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Zaloguj' tag='BUTTON' type='' class='cds-button-primary ml2 ng-tns-c62-2' check:text='Zaloguj' /&gt;" Guid="78637a38-c754-4e45-91f7-a57be58d98fc" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHkAAAAsCAYAAABBuRcNAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAToSURBVHhe7ZzpWuIwFIbnNnTGERVBxRUUV5xxFFHZynb/l5LJ23q0hVQLok0xP77nUQhpOG/OkjTlx2g0Uk6LLQf5G+jDkAeDkWo8DNTZpad2Dztqfautfq231FKuqZZWnaaWthv2w47YE7ti335/aLR/Es0M+ak5UCfnnsoV2ubBOs1V68W2OjnzVKs9PeypIQO3fNJVv/PaWw2DcfpcrWy0fPu32gMjH5MSQx4OR+r6b8+fUaaLO32tNnQ4h0ev975nJ4Lc6Q792cMsMl3QKSXp/A2Xdudt0O9CJgdQACznHGBbtV/uqmYrPny/CZkZEgA2d+5kjw4q5GmzR8dC7umSnVDgL4cMnTrZp8qp56fWcZaxkC9rPZXbdICzpBXtkBRj7F2EWRoh3zcGqlDqGDtyslvFUls1HqP5eQIyS6Vy1VPLa86Lsyo2Tbrea9iegHxb76v8tlsLZ1nwqzf68ZArp13103lx5sWet2yURCCzZbm1l/1cfHgcLCdYO27vf8/aYkd/78enIDdHIF/fpLdtWdSFXl0XfNQE4TGJeP3fXbJUkibkY/KhXsZQ/BR305tgq/mWby9sF4FMwk5rXQy82p+eP/uIKCJg9fvBLU3eX0swCVOF/LxWTRsyuqh5Ucj9wVDtHXWNjdMS4G9u+z5k7qni7aZ243LhOhCrpAhktjB3DuwxCMVf9TxYCuAZgJMoQ765uw/gM3a8/F5Xk9u6nmAL1gSZ70Y6kI0CdvQIZ5s7r5GBesTvV7chPWATRNur654fiok0jKd0GPS7exTkPoqc6oWnvafnj9mGCYbTRiAzUJuKLvZim63AwOdX3svu25YOgSwPgIUh+RsQAw2F5R/QxiGz/873A5wA8DQU/q9rqIVS2/8c0OmXa/J52tKG17IImUkfgWxDDhEx2fBMPGq82AII0Nl2ldfL1eB2mxg2DLmkPZj2QAh/R+7cPAFbAwGenLoA4NHznj1t2f0jYmQRMuO3EvKq9tgrXWBhNCAwG8fbAIjxMglk/MgEuaLzEnmd/uhXCjc8F8/Hay81QIo64IRzv1T8CwOZgdoQruVOCobCQ8erfTEqB9uARHsM24nx5DjIRATy7yJDngjXNhReYYC1mKNGGDow4vDFiFSRGN4EOQjXQWSYV7jm+tKGMbPUsxHyROGV9hKKM0t4HEUORsXg4fUyIj9jbAxIoQUQ2tGe72CCzP/zKrwoBin0eI3JwWE66cdGyBNLKJTmZoiERgwWHlNYGA7PJIwDgbbkZR+aNizQ97Rn4WVhyPSfZAmF597q15g09M3OFRC5BpDXCrpy16CZcLyPuAbX5fq2QZ7YDEFpbmvaIDyaySDHjZlQDzoCAJoz5kmOIcttvrQhx25rMkMX4QbFLMq/VNtBfeJHh+dQ/JjALrxPupEQT1hn0pjafoVib1Cg73yrES8O76QRpoElO2mmz4iotiXvkyqoC9JKfSj2ViNyhwayL/gxOYXpBGRmojv+k21JXSBMJyAjd5Avu0p0kE/kjuRmT1MdyUWsI93h+mxp6sP1iKWEe0wmG5rpMRkRH3QPvNmtDz3wJiIEuEdXLdS8Hl0VsbRyD6Hbo7k/hB4WW5/MHvdzEunoU39OYlzAdj8M83Uigso9bxOPtzQzZBFrMvcTT3OUthv2s+InnpyyIwd54TVS/wEQRNH0qTxaLQAAAABJRU5ErkJggg==" InformativeScreenshot="90fac07a53c8393461e3859baa9e059e.png" Reference="8mqe2vJVnkipbF0g__22OQ/zmL4TGVHMku1MDWfZjGYNg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SSO' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                        </uix:NClick.Target>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </uix:NClick>
+                      <uix:NCheckState DisplayName="Check App State 'Faktury'" sap:VirtualizedContainerService.HintSize="954,475" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="2d20bbd5-d5e4-4837-9b98-0627cc3c3291" Timeout="30" Version="V3">
+                        <uix:NCheckState.IfExists>
+                          <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,258" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Log Message - Success" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Successfully Logged In Comarch&quot;]" />
+                          </Sequence>
+                        </uix:NCheckState.IfExists>
+                        <uix:NCheckState.IfNotExists>
+                          <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </Sequence>
+                        </uix:NCheckState.IfNotExists>
+                        <uix:NCheckState.Target>
+                          <uix:TargetAnchorable BrowserURL="https://app.erpxt.pl/#/startpage" ContentHash="RvXk3cuUhUmfLynOkXmTOQ" CvTextArgument="Faktury" CvType="Text" DesignTimeRectangle="60, 279, 196, 20" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Faktury'" FullSelectorArgument="&lt;webctrl aaname='Faktury' parentid='user-menu' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Faktury' parentid='user-menu' tag='SPAN' type='' class='text ng-binding' check:text='Faktury' /&gt;" Guid="4de6c1fe-908d-4079-abb5-70a90e64ece9" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAMgAAAAYCAYAAAC/ZrKxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPeSURBVHhe7VnNSltBFM4baF+kPkF9g2ZTb5/Apdl3kUVpNl1oKojdJBaJGyEl0ogBA7UGWgsSrCGBECuaiCgpDV5CIMEETs/83d+JzU8rjT0XPr58c87MuJhzvzPXwPTcInA8k0yaNGlLY4Es4Q8CgaCDdBAmiImJvcwd5JHBBhCSSZMmLTQ5CDHxHSzuIJ4KIiYmFvxHL+mJSwCzuK+NEQiTiACvFolwqQO6xyzhoXfk8R5NA14gmNsvrkBx/bgCxfXjCvcZdzlIuIgFcll0VdAw+K2DbNfHWp9AuG/YDoKCOwg7wFJbsQG1cpB+8XHXJ036vvVQDjK/XYNKsysbL3yaDUgn4lbc7SBxmM81oHPbgOTyJ0j/kHOspwEJzON7tmoQlmsIFKECHcitS71eA5PlJM6g2hazK1+/QaGHvGfvz7F6BnXnXAJhDEgHifJqsd/wQnt5JlWGdGoXZpkOJWGxjPk3ZzAv47aDRMHYw+LotSC3gQfYEfeuz/dsXUDYsc+0oQpE6vULMNsdLBITsqmPML+SAePFEkTKWKzXZQg61gsdtfjfFHKtR0w8GvsdxPdo3sZsMuPkFUaFEzCtHMTI1MHs4TyHu6i4q8VCaB3EKhCpmYPg1EJGrqfmb7L9TUi/knpuH3JYH/X8jtR94NhfC4rrxxX+o/hQDjL7rgyFnx1sm/C09rqCWYHIOC+Q6wY/zPX8rm/+WA7i2MfOy0L2Bvc6ygotCyYZ8eYRE4/Grn8Uai/RivlbvAuV3C4EQ3Ic2yhRIELzAsC26rCE7RU74Ky9cqzjcxBkl4NY4zoHsfdxzg8eYDmylgq13XL584iJR2F0EFYtAm4HccN+09tj/HBab/aocJBSDn+vweIJHtYm5ofsfLeDCOjWFY6hHERpex8XImWo8twvcIgX+EJmzZ9DIIyIwJSsFMZOB3GOM37M3KKH7cvqBuo4PE2cQLXFvmiJNzvL4wXCvmIxvYD3gSZAG9czZFwUwxVE8II9tRCHGTb+gX1z6kBhe4frmZf7kL5m6woH4ftrHMT+++IQO8d9a9ja9eoQW/DG3eyfT3GK948P7CDTxhbETjEun04TD+Mye3vrHETOef0d4wDV3JbUx1DAouFPrwExnrcFKyUTD7ccb2OLlsnjZXtAB2F4z+4e+Jzn9XECYUS4LukTyxFWiF043Bwwn5h4QHY5yKQi+BnvQm1s3TQxAmEcBKZkpUwqP3lbhsottnEHqYHyiYmHYb2DPNeMOfFPxNmnYPGYp8dg+OJ3gOL6cQWKW78fRItFIPwtiAJRFWPxG4/2MsUprhtX/FDiUfgFWK7y7AUQyekAAAAASUVORK5CYII=" InformativeScreenshot="50823ae1c9738aea14278d1577ba6889.png" Reference="8mqe2vJVnkipbF0g__22OQ/PaXAZjYaq06wlI8G1p8xFQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Comarch ERP XT' /&gt;" SearchSteps="Selector, FuzzySelector, Image, CV" Version="V2" Visibility="Visible" WaitForReadyArgument="Complete">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                <uix:Target CvType="Icon" DesignTimeRectangle="28, 281, 20, 20" FriendlyName="'Faktury'" FullSelectorArgument="&lt;webctrl idx='3' parentid='user-menu' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='user-menu' tag='SPAN' class='sidebar-icon icon-invoices' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIvSURBVEhLtVRNSxtRFM0/MLoQBFdWt/4Bf4SLWqGKoHVX6MriWkFKFRO/FdSVdBGtEj+KFS20iq2Nyab4FWNsMYmp+Wi1iDbJ5va9+96bmfdmJo2QLA5n7j33znnnDYzD2TQIziYXQWmYGLig/AltEHAuZv2gBFWtI3D/NwPZbNYS6Ztb0x4mEM6F8OO+RWgdWIaW117kxp4FaHetQv/8Lpqo88zgP3At7UHk6jcEI0nY8J/B+/0Q8mYgDF3TW9pcJpOR9igc6KYA75Bj6l0AF89iKQhfpiWcx3/hqUdXfDiLBsp+3gS9b7Zxad0XstQpvoXjEE1cQ037hH5FBugJaMPg3D37Qft4nk+HJl3UX48jcBpNQe2zSWag6JYJXkxsaC+neLvDDSwQOI3B8UUSHnVwA0XnCdzc2Q0d7jW8FqPBK8+upqusGUgJdN2UgA7FUjdkKQGhaBK8n0+gum1MmsFl/myZwKCbEtCh+uezWFc0D2l9Oy4sAS0406Hazkn5JHk4bwLCJAF106EnkPt20BNM8QSy7ijjToKZwYxWqyxOJmphUKMkEHrpE+CpsGCsG8h9O6YGhz+uoI58N2Yg60VJEE//gcqnI/h3VXVHGXcSLAzUvh37g1G4vbu31S0TOJvlngkG/cvRBeRyOVvdZECHF3aOYNjrg7GVfVuMEoyv+vFAB99/Su8wghkIR8Kejwe4VCiCkQQ0vJzT9hnTPwCryTdgzVKxKUFx2Q3/AI0vPpXOi129AAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image, CV" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:NCheckState.Target>
+                      </uix:NCheckState>
+                    </Sequence>
+                  </Sequence>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,258" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message - Zalogowano" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Alreday Logged In Comarch&quot;]" />
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable ContentHash="htHP97GBskWhw2uK_V2kgw" CvElementArea="1023, 603, 105, 45" CvTextArea="1057, 617, 38, 18" CvTextArgument="Dalej" CvType="Button" DesignTimeRectangle="1026, 606, 100, 40" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Dalej'" FullSelectorArgument="&lt;webctrl tag='BUTTON' aaname='Dalej ' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' aaname='Dalej ' type='' class='cds-button-primary ng-tns-c62-2' check:text='Dalej' /&gt;" Guid="96be8161-9ca4-417c-9442-cebadb0d48ed" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGgAAAAsCAYAAACJ1f3bAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQQSURBVHhe7ZrPTxNBFMf9/4w341FuBG96MepF40EPmGjUBBIiMSoqMRKiIUEjKgGNooQQiJpoQBBs+dGWltKWbtvnfqfOdru87e62dHeA+Sbf0Gx3tt33Yd6+edNjpKW0NCDF1TKg+R8FejKcpqs3N6jrQoxOda3QiY4/dPz08pEy7hn3jhggFogJYtOqmgK0Gjeo/2mKOs6usl9Wu2bECLFCzJpRIECpdJnu3k+yX0Tb24gdYhhEvgG9ep8VU5j7YG3/RgwRS7/yBUjPmv03YupHnoDwwOM+QLt1I7ZeaghIw2m/vSC5AtJpLTw3SncsIDzEuAtpt89uhcMeQCgDdbUWvhFzrgTfA0intujMpbo6QFjtcgO1w7Oz41AHCC0JbpB2eAYDu+oAHabe2sx8XtzTQSt4wMAuCxA6r9yAMC2DKlWpEKUzZXo9ng38zxMU0K2+BG1ny5RIluhy9zp7Tli2d8EtQGiPcyeHaRnULRPKwnKRVmIGGUZFgFpYKtKZizF2HOdmAGW21QAEFlIWIBW6BjKo+CuP4XttJEoC0psJ/+kqKCCVbO8uWICw0cSdHKY5QPDI2LYAhAqn8/xfcaxvIEXxDYPK/5cO2Z2yAHiys7pZyAHCmDVzDK4FY7b0D26J9270JiiXrwjjtRwThcFCygKkwuLUDRDSDwKXMZ8R1+5s0u17CQEE6W/OzNdfZvOUL1TIKFXo2ctqqnYC6nmQFNfYLVZoaaUojNcY1/swpRQgsJCyAKmwTe0GyBm87p5NMVsGX9Sem+OfdurGOgH9WtwVswaz0Tlmei6vFCCwkDoQgJwzCMeej2QokSpZKU6KA3Tp+jptmunMTYtmQaI8IJVTnPMZ9NiscpDekOaGRzMioBOf3WeQBFQyGeH42GS2zpiJKgFiU5yqRQJXxU2bKQma/VZbu01O5cQxOVZey5nipmZyViGBv3JGqgSILRJUKrO91kGYNUht8oEfW6tVc26ABobS4nxcK75uiOsjRWJWYYaqBIgts1VaqEohmMmtEo2+q+8k4D//7YcdKuyaJ5hCB+D7z+oM+W0Cw/tOQLC9NMe5GIfr4NoqAWIXqiq0eqK0SoDYVg90mJqlQfzxa85awGKGnbsSZ88Lw67NUuiobjegzIaQ8h4NVTsLUbnhdoPesIveDTfsIL3lHZ09t7wh/aORaIyY+/rRCGQvTbXDMWLOiQUE6VQXnrnUJuUKCFKhu3DYbe8acGoICNKQ2mcvOJAnIEinu/13o7Rmly9AEB5iurpr3YihW0HAyTcgCGWgnk3NG7HjSulGCgRICqtdtCSOau8uiBEjxMrZIfCrpgDZhc4r2uN44GGjCVNYhe3zsI17xr0jBogFYmLvSjerlgFptVcakNIi+ge8C88ENhv5DQAAAABJRU5ErkJggg==" InformativeScreenshot="4fa9dbc6007b2b89f1dc84d5ef613b81.png" Reference="8mqe2vJVnkipbF0g__22OQ/d9lERCto2UOlJ3y5BQ7sFg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SSO' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Chrome" ContentHash="s0ZLBUp_XUmJMzkg4119nQ" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHpSURBVFhH7ZbPK4NxHMed/dj8mlL+AmVclIubHOS2445uk6WdiGLMj4MoiYMDtRaililGciA/Mlmxkvx28esiiXjm+dhnfbfn+X6f4Xm+z4bDXvW6TM/n/drFngz4Y9IB/y/gQxTBt3wKrqEt8K+dk08BOtZEyHQKXBb2CtC0EIaXd5Fck1AEtPdvgKl0JG7/8A75C0DnyhtktT5xa/e+kksSVIAY+fYlFWNUgCJi8RmyHXdcFrXckysSVIAgfCjGY8ojnL5HyLFdatbQeEUuSKgOQKkI7wMYGo40Wdx8QZ6W0BSAyiO6Zm/AaN1Xrdl1S56U0ByAUhFT12C0bP6oyboLtW6BPCXBFYDKI7rdZ5Bbv/qleRGrBh6gbpo8IIM7AKUiJo4hr8aX0PLWk+h40gNQeYRrPAT51TOUZY5QfDwlASgVMRaEgsrJqGZ7kBpPWQAqj+gZCYDZFlCMpzQAfztiuA+UwzFZkhKA4/hvHPluHGXRHaBlHGXRFaB1HGXhDuAZR1m4AnjHURbNAXrGURZNAXrHURbVAckYR8mJOFQADiR6JUvWuGUueoKCCkDa+taZ8e34uOcw8WG1ju5Fz1AoAvC1fN5/At2DW7Akey33hBIfVSN+cxx/C5NjMhQBv0064I8DAD4BfHCtdjtG2DgAAAAASUVORK5CYII=" InformativeScreenshot="119214cc71f93fa3a305a6922627f569.jpg" Reference="8mqe2vJVnkipbF0g__22OQ/2svcGUlyMkSwag9RvFF3ng" Selector="&lt;html app='chrome.exe' title='Rejestracja - Comarch ERP XT – Nowoczesny program do zarządzania mała firmą' /&gt;" Title="Rejestracja - Comarch ERP XT – Nowoczesny program do zarządzania mała firmą" Url="https://www.erpxt.pl/rejestracja/" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

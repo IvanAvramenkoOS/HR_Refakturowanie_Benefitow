@@ -1,0 +1,13 @@
+﻿{
+  "Id": "g7KRluw9PU-rQQkbNi8G6w",
+  "Reference": "8mqe2vJVnkipbF0g__22OQ/g7KRluw9PU-rQQkbNi8G6w",
+  "ParentRef": "8mqe2vJVnkipbF0g__22OQ/lcWRGnVw_UKIvGBmPnVnAg",
+  "Name": "Wyszukiwanie kontrahenta",
+  "Description": "Pop up window",
+  "Type": "Screen",
+  "Created": "2023-07-13T13:47:29.1459505Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=23.6.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2023-07-13T13:47:29.1459505Z"
+}

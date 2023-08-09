@@ -1,0 +1,15 @@
+﻿{
+  "Id": "jplJKzSfyU6AkDXTLXQDuA",
+  "Reference": "8mqe2vJVnkipbF0g__22OQ/jplJKzSfyU6AkDXTLXQDuA",
+  "ParentRef": "8mqe2vJVnkipbF0g__22OQ/lcWRGnVw_UKIvGBmPnVnAg",
+  "Name": "Comarch ERP XT - Home",
+  "Type": "Screen",
+  "Created": "2023-07-13T13:11:33.7859871Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=23.6.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2023-07-13T13:24:57.1718157Z",
+  "UpdatedBy": [
+    "UiPath.Platform, Version=23.6.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

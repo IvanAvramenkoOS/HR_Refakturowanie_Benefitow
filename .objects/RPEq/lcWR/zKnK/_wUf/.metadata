@@ -1,0 +1,13 @@
+﻿{
+  "Id": "_wUfMPKogEq8ep51YK6iLA",
+  "Reference": "8mqe2vJVnkipbF0g__22OQ/_wUfMPKogEq8ep51YK6iLA",
+  "ParentRef": "8mqe2vJVnkipbF0g__22OQ/zKnKPefBXU2q6S7J7Uk4CQ",
+  "Name": "Wybierz kontrahenta",
+  "Type": "Element",
+  "TaxonomyType": "None",
+  "Created": "2023-07-13T13:36:34.0848718Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=23.6.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2023-07-13T13:36:34.0848718Z"
+}

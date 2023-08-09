@@ -1,0 +1,409 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Comarch_WalidacjaWartości" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="intVAT23Counter" Type="InOutArgument(x:Int32)" />
+    <x:Property Name="intVAT8Counter" Type="InOutArgument(x:Int32)" />
+    <x:Property Name="intVATZwCounter" Type="InOutArgument(x:Int32)" />
+    <x:Property Name="Config" Type="InArgument(scg:Dictionary(x:String, x:String))" />
+    <x:Property Name="strVAT" Type="InArgument(x:String)" />
+    <x:Property Name="strTypWalidacji" Type="InArgument(x:String)" />
+    <x:Property Name="strKoszt" Type="InArgument(x:String)" />
+    <x:Property Name="strNazwa" Type="InArgument(x:String)" />
+    <x:Property Name="wndComarch" Type="InOutArgument(ui:Window)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>861,2839</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Comarch_WalidacjaWartości_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.Web.Activities</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>OS.Standard.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Comarch_WalidacjaWartości" sap:VirtualizedContainerService.HintSize="769,2774" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="ui:UiElement" Name="elFoundVAT" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Nowa faktura" sap:VirtualizedContainerService.HintSize="707,2663" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[wndComarch]" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="840e00b1-c631-47e2-b757-d51c1e1e46ea" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="673,2526" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="611,679" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+              <TryCatch.Try>
+                <If Condition="[strTypWalidacji=&quot;VAT&quot;]" DisplayName="If Walidujemy VAT" sap:VirtualizedContainerService.HintSize="572,451" sap2010:WorkflowViewState.IdRef="If_1">
+                  <If.Then>
+                    <Sequence sap:VirtualizedContainerService.HintSize="538,269" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Switch x:TypeArguments="x:String" DisplayName="Switch - wybierz wysokość VATu" Expression="[strVAt]" sap:VirtualizedContainerService.HintSize="496,181" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:FindText FormattedText="{x:Null}" x:Key="23" DisplayName="Find Text Position - VAT23" sap:VirtualizedContainerService.HintSize="334,155" sap2010:WorkflowViewState.IdRef="FindText_1" Occurrence="[intVAT23Counter]" Text="[config(&quot;VAT23&quot;).ToString]" UiElement="[elFoundVAT]">
+                          <ui:FindText.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f1091ec8-ffb9-4f59-ae34-b7cbc9fdea11" InformativeScreenshot="042f796fcfccc9bb02521d2fb90d82c8" Selector="&lt;webctrl class='items-part' parentid='content' tag='DIV' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:FindText.Target>
+                        </ui:FindText>
+                        <ui:FindText FormattedText="{x:Null}" x:Key="8" DisplayName="Find Text Position - VAT8" sap:VirtualizedContainerService.HintSize="334,155" sap2010:WorkflowViewState.IdRef="FindText_2" Occurrence="[intVAT8Counter]" Text="[config(&quot;VAT8&quot;).ToString]" UiElement="[elFoundVAT]">
+                          <ui:FindText.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f1091ec8-ffb9-4f59-ae34-b7cbc9fdea11" InformativeScreenshot="042f796fcfccc9bb02521d2fb90d82c8" Selector="&lt;webctrl class='items-part' parentid='content' tag='DIV' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:FindText.Target>
+                        </ui:FindText>
+                        <ui:FindText FormattedText="{x:Null}" x:Key="zw" DisplayName="Find Text Position - zw." sap:VirtualizedContainerService.HintSize="334,155" sap2010:WorkflowViewState.IdRef="FindText_3" Occurrence="[intVATZwCounter]" Text="[config(&quot;VATZw&quot;).ToString]" UiElement="[elFoundVAT]">
+                          <ui:FindText.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f1091ec8-ffb9-4f59-ae34-b7cbc9fdea11" InformativeScreenshot="042f796fcfccc9bb02521d2fb90d82c8" Selector="&lt;webctrl class='items-part' parentid='content' tag='DIV' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:FindText.Target>
+                        </ui:FindText>
+                      </Switch>
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence sap2010:WorkflowViewState.IdRef="Sequence_4" />
+                  </If.Else>
+                </If>
+              </TryCatch.Try>
+              <TryCatch.Catches>
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="577,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ActivityAction x:TypeArguments="s:Exception">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Retrow as BE" sap:VirtualizedContainerService.HintSize="450,388" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:LogMessage DisplayName="Log Message - Warn" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Warn]" Message="[&quot;Znaleziono niepoprwana watrość VAT na fakturze &quot;+exception.Message]" />
+                      <Throw DisplayName="Throw - BE" Exception="[new BusinessRuleException(&quot;Data validation failure&quot;)]" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                    </Sequence>
+                  </ActivityAction>
+                </Catch>
+              </TryCatch.Catches>
+            </TryCatch>
+            <Assign DisplayName="Reinit element" sap:VirtualizedContainerService.HintSize="611,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <Assign.To>
+                <OutArgument x:TypeArguments="ui:UiElement">[elFoundVAT]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="ui:UiElement">[Nothing]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="611,184" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+              <TryCatch.Try>
+                <If Condition="[strTypWalidacji = &quot;VAT&quot; and strVAT = &quot;zw&quot;]" DisplayName="If walidujemy zwolniony VAT" sap:VirtualizedContainerService.HintSize="334,182" sap2010:WorkflowViewState.IdRef="If_4">
+                  <If.Then>
+                    <Sequence sap:VirtualizedContainerService.HintSize="376,243" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:FindText FormattedText="{x:Null}" DisplayName="Find Text Position - VAT23" sap:VirtualizedContainerService.HintSize="334,155" sap2010:WorkflowViewState.IdRef="FindText_6" Occurrence="1" Text="[Config(&quot;VAT_Ustawa&quot;).ToString]" UiElement="[elFoundVAT]">
+                        <ui:FindText.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f1091ec8-ffb9-4f59-ae34-b7cbc9fdea11" InformativeScreenshot="042f796fcfccc9bb02521d2fb90d82c8" Selector="&lt;webctrl class='items-part' parentid='content' tag='DIV' /&gt;">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:FindText.Target>
+                      </ui:FindText>
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence sap2010:WorkflowViewState.IdRef="Sequence_13" />
+                  </If.Else>
+                </If>
+              </TryCatch.Try>
+              <TryCatch.Catches>
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,21" sap2010:WorkflowViewState.IdRef="Catch`1_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ActivityAction x:TypeArguments="s:Exception">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Retrow as BE" sap:VirtualizedContainerService.HintSize="450,300" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:LogMessage DisplayName="Log Message - Warn" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Warn]" Message="[&quot;Nie znaleziono info o zwolnieniu z VATu na fakturze &quot;+exception.Message]" />
+                      <Throw DisplayName="Throw - BE" Exception="[new BusinessRuleException(&quot;Data validation failure&quot;)]" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Throw_4" />
+                    </Sequence>
+                  </ActivityAction>
+                </Catch>
+              </TryCatch.Catches>
+            </TryCatch>
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="611,653" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+              <TryCatch.Try>
+                <If Condition="[strTypWalidacji=&quot;Koszt&quot;]" DisplayName="If - walidujemy koszt benefitu" sap:VirtualizedContainerService.HintSize="410,425" sap2010:WorkflowViewState.IdRef="If_2">
+                  <If.Then>
+                    <Sequence sap:VirtualizedContainerService.HintSize="376,243" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:FindText FormattedText="{x:Null}" DisplayName="Find Text Position - Koszt" sap:VirtualizedContainerService.HintSize="334,155" sap2010:WorkflowViewState.IdRef="FindText_4" Occurrence="1" Text="[If (strKoszt.Contains(&quot;.&quot;) or strKoszt.Contains(&quot;,&quot;),strKoszt.Replace(&quot;.&quot;,&quot;,&quot;) ,CInt(strKoszt).ToString(&quot;####0.00&quot;).Replace(&quot;.&quot;,&quot;,&quot;))]" UiElement="[elFoundVAT]">
+                        <ui:FindText.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f1091ec8-ffb9-4f59-ae34-b7cbc9fdea11" InformativeScreenshot="042f796fcfccc9bb02521d2fb90d82c8" Selector="&lt;webctrl class='items-part' parentid='content' tag='DIV' /&gt;">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:FindText.Target>
+                      </ui:FindText>
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence sap2010:WorkflowViewState.IdRef="Sequence_7" />
+                  </If.Else>
+                </If>
+              </TryCatch.Try>
+              <TryCatch.Catches>
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="414,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ActivityAction x:TypeArguments="s:Exception">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Retrow as BE" sap:VirtualizedContainerService.HintSize="450,388" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:LogMessage DisplayName="Log Message - Warn" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Warn]" Message="[&quot;Znaleziono niepoprwna wartość kosztu na fakturze &quot;+exception.Message]" />
+                      <Throw DisplayName="Throw - BE" Exception="[new BusinessRuleException(&quot;Data validation failure&quot;)]" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                    </Sequence>
+                  </ActivityAction>
+                </Catch>
+              </TryCatch.Catches>
+            </TryCatch>
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="611,653" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+              <TryCatch.Try>
+                <If Condition="[strTypWalidacji=&quot;Nazwa&quot;]" DisplayName="If - walidujemy koszt benefitu" sap:VirtualizedContainerService.HintSize="410,425" sap2010:WorkflowViewState.IdRef="If_3">
+                  <If.Then>
+                    <Sequence sap:VirtualizedContainerService.HintSize="376,243" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:FindText FormattedText="{x:Null}" DisplayName="Find Text Position - Nazwa" sap:VirtualizedContainerService.HintSize="334,155" sap2010:WorkflowViewState.IdRef="FindText_5" Occurrence="1" Text="[strNazwa]" UiElement="[elFoundVAT]">
+                        <ui:FindText.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f1091ec8-ffb9-4f59-ae34-b7cbc9fdea11" InformativeScreenshot="042f796fcfccc9bb02521d2fb90d82c8" Selector="&lt;webctrl class='items-part' parentid='content' tag='DIV' /&gt;">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:FindText.Target>
+                      </ui:FindText>
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence sap2010:WorkflowViewState.IdRef="Sequence_10" />
+                  </If.Else>
+                </If>
+              </TryCatch.Try>
+              <TryCatch.Catches>
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="414,21" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ActivityAction x:TypeArguments="s:Exception">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Retrow as BE" sap:VirtualizedContainerService.HintSize="450,388" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:LogMessage DisplayName="Log Message - Warn" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Warn]" Message="[&quot;Znaleziono niepoprwna nazwę na fakturze &quot; +exception.Message]" />
+                      <Throw DisplayName="Throw - BE" Exception="[new BusinessRuleException(&quot;Data validation failure&quot;)]" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Throw_3" />
+                    </Sequence>
+                  </ActivityAction>
+                </Catch>
+              </TryCatch.Catches>
+            </TryCatch>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Chrome" ContentHash="A1z_PfFSGUO1tvovuHfyiQ" IconBase64="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" InformativeScreenshot="7b240214b8eb16ff88d618889fb819e5.jpg" Reference="8mqe2vJVnkipbF0g__22OQ/zKnKPefBXU2q6S7J7Uk4CQ" Title="Comarch ERP XT" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

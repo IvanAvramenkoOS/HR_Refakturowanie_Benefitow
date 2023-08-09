@@ -1,0 +1,202 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Comarch_ŚciagnijFakturę" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="wndComarch" Type="InOutArgument(ui:Window)" />
+    <x:Property Name="Config" Type="InArgument(scg:Dictionary(x:String, x:String))" />
+    <x:Property Name="strFakturaSaved" Type="OutArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1014,2399</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Comarch_ŚciagnijFakturę_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>OS.Standard.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Comarch_ŚciagnijFakturę" sap:VirtualizedContainerService.HintSize="642,2334" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="si:FileInfo" Name="strPathSciagnietaFaktura" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="580,2223" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[wndComarch]" OpenMode="Never" ScopeGuid="05bc75e9-2879-4488-8c7a-0037060f15ec" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="546,2086" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:Boolean" Name="boolTodayOutputFolderExists" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Drukuj Fakturę'" sap:VirtualizedContainerService.HintSize="484,157" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="05bc75e9-2879-4488-8c7a-0037060f15ec" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://app.erpxt.pl/#/invoice/new/750047083.5728028" ContentHash="C42z-LXm9E24vp6nS6-kAQ" DesignTimeRectangle="719, 810, 303, 18" DesignTimeScaleFactor="1" FriendlyName="'Drukuj Fakturę'" FullSelectorArgument="&lt;webctrl parentid='angularView' tag='P' aaname='Drukuj fakturę' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='angularView' tag='P' aaname='Drukuj fakturę' type='' class='' check:text='Drukuj fakturę' /&gt;" Guid="15538534-1ea5-454e-94eb-0daacb35d3c4" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAATMAAAAWCAYAAACsTntvAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARJSURBVHhe7Zu/a9taFMf1X8ijwIshg9/mbKnJYIcONnSwwcNL6NCkQ00zPHAXx1MSMpR2aEiHYjSU4KEmHWraIQQPJXgJeIhBQzGBQGoIxoVQ2uX7zlUkR1GuI7uu60Y6wwese++5ki/ow7k/pHz/8RMMwzB3HZYZwzC+gGXGMIwvYJkxDOMLWGYMw/iCuy2zegnKAx1tWd0wnDZRa3bkdUT3WMfiTAiKokBb/YiupM0VJyg/ULBWl9UxDDNpJiqzg6JiiqBPeBaLRR2Hp/L2IzOmzNpvs1Af7+FMUncppxDyH75J6mR4yKz3EflxxMswzK1MXGYp/eSq7NzAwesVxNQsysb1tr/EuJnZrdSxpqRR/iKrk+Ehs8YmoiwzhpkYf1ZmFq03aSiJHbTMayEBkoZhYPdJHCplcJm3IkYmE1eZS2ZdEkZybgVVU5Te8W2dnqNYd9RbHFeQz8WhKSFE5uK4N/8Ch6K818D2ozRi4ctMU0s8te4lcMvMQPVxHMmtBs72N5Ga06CoEerrqj/Z/a+XDRobqjtvory6QM9Iz0L9ZtbrAzJMhgkGU5HZ9697WFay2D0R1+KF/QfJ+0vYqDvXr0aUmaEjE3ZmfGPIzEQW30HLscZ29v4p1L5MnTL7Rv99FjHqu7/OJskih5OZbGw6qD7SkHlj9K9rz6jda/uaYYLHdGRmisJ+8S8lcO9lU9JmSJmdU3lslvpzrm95x48uMxdfdKSUEg7M6yuZtfQstJxuZZ4WvywzydiI+87bma2FmMa6yxgmQExRZiGsfRa/nRmNu80QMksVsJaj6eANKXnHjyyzixPUnq+QSMRUkZiL0NTvusyWiyXEKOssm1mngzFkdmNsRF9ienkD+1kYJnj8JdPMMWSmzGJZ30Fepczs8yQzMzG1C5lTx/7alCQzU+9vory1ADVXuSau3y4zV18ME3SmswHwagHKvxVLCiPITBxvcMvMeqm7+wVEYySWc7u9d/xoMpP0J6Z2kmmmWPwXxzoyumMNa0iZtV7FvWV2vIOkWkCt5ypnmADzR2XWPW2iup6GFl7C7sBdQBsD2wmK7y9qd6i/OFRVLrObi+7e8aPJjPqbDyH/3lqI75GwHkagSWVGuDckhPiiBYdsaTw+FaBSWe2rVUYxi+GQt8zsLPG/PbQvrLJeB0fG4APADON3Ji4z55qOFktjeb2CI/vlNRn0whLGHvIJzYxVZ7LY2G+gnBskM8LcCHAcdPWIH01m4ujHC2TsLwLMYxkNbEQHyIwQGwFq/whKB7WidZQivHl51IMEfPg8i4gqxkdDclXH0YcSVE+ZERcGqkU7VhDi3Uwm0ExUZn87t8vsDkFZX4r+x+2fWzGMvwm0zI5exhHdakjr7hIHlPFt96ftDBNMAimzdmXJPE2vJUqo/a7vRKeI+D+RmTjy72THYBgmGAQ6M2MYxj+wzBiG8QUsM4ZhfMBP/A8V5axPJMiZaQAAAABJRU5ErkJggg==" InformativeScreenshot="9b72611790dc5f35d491dd1a8afe2b78.png" Reference="8mqe2vJVnkipbF0g__22OQ/GfyBaQKH0U6EqSZ9hqQ2Tg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Comarch ERP XT' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvType="Icon" DesignTimeRectangle="643, 804, 76, 30" FriendlyName="'Drukuj Fakturę'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span' idx='3' parentid='angularView' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='cell cell-1of6 print-ico' parentid='angularView' tag='SPAN' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFAAAAAiCAYAAADI+15nAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFuSURBVGhD7ZexioNAEIbv/d/AWtDSwsJCUWxEQbATRBsLQbCysPaYzSZsPIObm13YxfngJzDMbPAjcfRnJ1CQQCQkEAkJREICkWgVWNf1V7ERrQLDMNwdx5EK9NqIdoEyYmT7TIQEIlEiMMuylwTVKcuSf4uZKBF4dk9TGZNRKvBss2JyO4GqubVA8T4Gv6b/QAJJoBy6LpQEIiGBSG4tcJ7nt0cSmSzLwqcf3FogvEE867KpqopPP3jWTUabwCRJWG2aJqlAL7wSipydaxpKBYqPLhCobdvGuz6zruvHeYjJKBHoed7rYsX4vs87rnFd9/QMqJuMEoFnCwMuPooi3nFNEARs5ngO/L1NRonAI13XMRlFUfDKNXEcs5lhGHjFDrQIhG0KMtq25ZVrmqZhM/BpE1oEpmnKZBw37VVgJs9zfoodaBEobtBvA7M2oUVg3/d/loFsxnHkp9iBFoF3ggQiIYFISCASEohi338BUSJUzh+NsmgAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Faktura'" sap:VirtualizedContainerService.HintSize="484,157" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="05bc75e9-2879-4488-8c7a-0037060f15ec" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://app.erpxt.pl/#/invoice/new/750047083.5728028" ContentHash="hhydc4_dwEme2DRtCReeaQ" CvElementArea="612, 517, 712, 41" CvTextArea="941, 530, 54, 14" CvTextArgument="Faktura" CvType="Button" DesignTimeRectangle="613, 459, 710, 37" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Faktura'" FullSelectorArgument="&lt;webctrl aaname='Faktura' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Faktura' tag='BUTTON' type='' class='xt-btn xt-btn-secondary margin-bottom-10 no-margin-right inline cell-12of12 print-option-btn ng-binding ng-scope' check:text='Faktura' /&gt;" Guid="fcd2ace4-edb6-4870-8744-873d8aa020cd" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAsoAAAApCAYAAAAs2Q9FAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAStSURBVHhe7dzLa1xlHMfhLLqV/hcuXHQnuBZcuRAX7hTElQsr6Ep3Il4WbgQVFYWWYgqCVCu6qPQitdoLCm1R22pjrU2apE0yuU2SmVxez+/EdzydnHSmCqUkzxcempk5c6ar8OFwMgPJzMzMzMw2TCibmZmZmdVsQygPDjXTroNjace+4TSw9xoAAGxZ0bzRvtHA3bsllHefbqSd+0fSwJ76EwEAwJZTtG80cLRwdZ1QjoouI7nuzQAAsMVFC1evLHdCOS45u5IMAMC2VbRwNHFeJ5TdkwwAwHYXTZzXCeW6AwEAYLvJE8oAAFCRJ5QBAKAiTygDAEBFnlAGAICKPKEMAAAVeUIZAAAq8oQyAABU5AllgLvg49/my9+18W/d6wDcO/KEMkCffmm0//mN+e9m22vpqe8ma4+v6hXK9x8YTb/PLqfD15dqXwfg7skTygB9ilBeXFlLn19dSPsuN0sfXppPD309Xnt8Va9QfvrEVJpprwplgHtAnlAG6FOE8mZXkJ89OZUuTC+n5bX136nN4odPhprpvsHh8vXuUI7jG63VdK25kt6/OJ+mip+ri896+NCNNFy8Hj/nz8nPhfg5Pz5SBPaXfy2m1upaujK3nB78ajx9UET8+OJqiv9SGF1YSS+eme6cC4B6eUIZoE+3C+XHj06kUzdbZfS+cKaRLs0sl9H66tmZ8vVqKD92ZKIM5AjlCOYHvhhL712cK48/Md4qz//o4Zt3FMoLK2tlnMexB64ulMe+eX42nbzRSi//NJ3e/nUuTRefl9+XzwfARnlCGaBPEaHdt168UcRo3bGvnZspwzdfQY5/43EEcTWS8/ER1PF69daLOw3ll4ogzsfVOTq61Pc91QDbWZ5QBuhTBGv3csQ+eXwynZ9ql8FaXXcoR9TGPvtz/apv9n9DOT/Ox4W3fp5N1xdWOreDxIQyQG95QhmgTxGsdaGZY3W+KNK49SJupcjhWw3lWBwTt0D81yvKj3xzs4zfXqGczxf3Kz9/ulHeKx3nFsoAveUJZYA+bRbK8Tierwbt3svN8ndrdyjH86+fny1v4Tg31S6jOl6/XSjnP86L55471Shju1co58/Lnx+hHH9sKJQBessTygB92iyUn/h2Ik0urZZXiuOe5Yjh+Kq3uOOhO5Tz40Mji6no4vTplfVbMHIAxzdTvHthrjxPfLfyxSJu426OY6NLaXComf4oojne1yuU4xxxXMRx/HHh8bGl1C6eEMoAveUJZYA+bRbKIb5POb51IhZf9fZOEarx1WybhXJ893JEb1xZfuXsTHnFN3+9W5zlx4lWedwz30+lkSKC47l4LQL77GS7ZyjHleofbrTKyI73RjB/VHx2/N+EMsDt5QllAACoyBPKAABQkSeUAQCgIk8oAwBARZ5QBgCAijyhDAAAFXlCGQAAKvKEMgAAVOR1QnnHvuHaAwEAYLuIJs7rhPKug2NpYE/9GwAAYMsrWjiaOK8TyoNDzbRz/0j9mwAAYIuLFo4mzuuEcmz36cZ6LLuyDADAdlG0bzRwtHB1t4RyLCo6Ljm7ZxkAgK0umjfat3olOW9DKJuZmZmZmVA2MzMzM6tZSn8DXzOxKtXeGusAAAAASUVORK5CYII=" InformativeScreenshot="bb6791e004147a6e2ca40738fd73e0fe.png" Reference="8mqe2vJVnkipbF0g__22OQ/_jp18M1jYkiekJjAmcug2w" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Comarch ERP XT' /&gt;" SearchSteps="Selector, FuzzySelector, Image, CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvTextArgument="Wybierz rodzaj wydruku" CvType="Text" DesignTimeRectangle="613, 406, 710, 22" ElementType="Text" FriendlyName="'Faktura'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;h2' tag='H2' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' tag='H2' class='modal-header-title xt_h2 ng-binding' aaname='Wybierz rodzaj wydruku' check:innerText='Wybierz rodzaj wydruku' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <ui:GetLastDownloadedFile FileResource="{x:Null}" Timeout="{x:Null}" DisplayName="Wait for Download - Faktura" DownloadFolder="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), &quot;Downloads&quot;)]" File="[strPathSciagnietaFaktura]" sap:VirtualizedContainerService.HintSize="484,510" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_1" IgnoreFiles="[Config(&quot;Download_Formats_To_Exclude&quot;).ToString]">
+              <ui:GetLastDownloadedFile.Body>
+                <ActivityAction>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,254" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:LogMessage DisplayName="Log Message - Czekam" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;Czekam na ściagnięcie faktury&quot;]" />
+                  </Sequence>
+                </ActivityAction>
+              </ui:GetLastDownloadedFile.Body>
+            </ui:GetLastDownloadedFile>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,143" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;Faktura pomyślnie utworzona &quot; + strPathSciagnietaFaktura.FullName]" />
+            <ui:FolderExistsX DisplayName="Folder Exists - Do Faktur" Exists="[boolTodayOutputFolderExists]" sap:VirtualizedContainerService.HintSize="484,133" sap2010:WorkflowViewState.IdRef="FolderExistsX_1" Path="[Config(&quot;OutputFilePath&quot;).ToString.Replace(&quot;&lt;date&gt;&quot;,today.ToString(&quot;dd.MM.yyyy&quot;))]" />
+            <If Condition="[not boolTodayOutputFolderExists]" DisplayName="If - Folder do faktur nie istnieje" sap:VirtualizedContainerService.HintSize="484,350" sap2010:WorkflowViewState.IdRef="If_1">
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="376,168" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="334,80" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[Config(&quot;OutputFilePath&quot;).ToString.Replace(&quot;&lt;date&gt;&quot;,today.ToString(&quot;dd.MM.yyyy&quot;))]" />
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_5" />
+              </If.Else>
+            </If>
+            <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[Config(&quot;OutputFilePath&quot;).ToString.Replace(&quot;&lt;date&gt;&quot;,today.ToString(&quot;dd.MM.yyyy&quot;))]" DisplayName="Move File - Faktura do folderu na dysku" sap:VirtualizedContainerService.HintSize="484,159" sap2010:WorkflowViewState.IdRef="MoveFile_1" Path="[strPathSciagnietaFaktura.FullName]" />
+            <Assign DisplayName="Zapisz argument wyjściowy" sap:VirtualizedContainerService.HintSize="484,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[strFakturaSaved]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[Path.Combine(Config("OutputFilePath").ToString.Replace("&lt;date&gt;",today.ToString("dd.MM.yyyy")),strPathSciagnietaFaktura.Name)]</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 0, 0" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

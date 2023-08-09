@@ -1,0 +1,13 @@
+﻿{
+  "Id": "srK6Wq2cPkWI4zZ5h4XczA",
+  "Reference": "8mqe2vJVnkipbF0g__22OQ/srK6Wq2cPkWI4zZ5h4XczA",
+  "ParentRef": "8mqe2vJVnkipbF0g__22OQ/tD8eqcZvxke9Zq-cJAiDAA",
+  "Name": "Cookies Button",
+  "Type": "Element",
+  "TaxonomyType": "Element",
+  "Created": "2023-07-13T10:20:12.3908984Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=23.6.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "Updated": "2023-07-13T10:20:12.3908984Z"
+}
